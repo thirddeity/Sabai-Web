@@ -11,7 +11,7 @@ export function FloatingTopNav() {
       </Link>
       <Flex component="nav" gap={8} align="center" className="sabai-nav-links">
         {navItems.map((item) => (
-          <Button key={item} type="text" shape="round">
+          <Button key={item} type="text" className="sabai-nav-button">
             {item}
           </Button>
         ))}

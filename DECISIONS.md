@@ -73,3 +73,17 @@ Impact:
 
 - Route handlers should not contain large database query logic or hidden business rules.
 
+### 2026-06-10: Use LINE Seed Sans TH for Thai-first UI typography
+
+Decision:
+
+- Use LINE Seed Sans TH as the primary web UI font, with Noto Sans Thai, Inter, system-ui, and sans-serif as fallbacks.
+
+Reason:
+
+- The product is for Thai users and needs a clean, friendly, readable, soft interface that does not feel too corporate.
+
+Impact:
+
+- Font family should be applied globally through Ant Design theme tokens and base CSS.
+- Feature components should not repeat `font-family` declarations unless there is a clear future exception.

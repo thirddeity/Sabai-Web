@@ -58,8 +58,9 @@ Status: In progress.
 - [x] Add shared FeatureCard.
 - [x] Add responsive app navigation.
 - [x] Add subtle motion and hover effects.
+- [x] Apply Thai-first global typography with LINE Seed Sans TH.
 - [ ] Add loading and empty state visuals.
-- [ ] Verify mobile and desktop layout.
+- [x] Verify mobile and desktop layout.
 
 ## Phase 3: Backend Foundation
 

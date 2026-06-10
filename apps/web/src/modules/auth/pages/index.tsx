@@ -32,7 +32,7 @@ export class LoginPage extends Component {
           <Form.Item label="รหัสผ่าน">
             <Input.Password placeholder="ยังไม่เปิดใช้งาน" />
           </Form.Item>
-          <Button type="primary" size="large" block>
+          <Button type="primary" size="large" block className="sabai-soft-button">
             ยังไม่เชื่อม auth
           </Button>
         </Form>

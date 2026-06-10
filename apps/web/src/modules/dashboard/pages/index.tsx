@@ -42,7 +42,7 @@ export class DashboardPage extends Component {
                 การ์ดหลักสำหรับ 4 เรื่องสำคัญของชีวิต
               </Typography.Text>
             </div>
-            <Button type="primary" size="large">
+            <Button type="primary" size="large" className="sabai-soft-button">
               เพิ่มรายการ
             </Button>
           </Flex>
@@ -65,7 +65,7 @@ export class DashboardPage extends Component {
           <Typography.Title level={2}>Today Summary</Typography.Title>
           <Row gutter={[18, 18]}>
             {todaySummaries.map((item, index) => (
-              <Col key={item.label} xs={12} lg={6}>
+              <Col key={item.label} xs={24} sm={12} lg={6}>
                 <StatCard
                   label={item.label}
                   value={item.value}

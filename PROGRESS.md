@@ -42,6 +42,13 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
   - Added Life Hub bento layout with mock dashboard data.
   - Added floating top navigation and mobile bottom pill navigation.
   - Added feature and stat cards for the placeholder dashboard.
+- Applied Thai-first global typography:
+  - LINE Seed Sans TH is loaded in base CSS.
+  - Ant Design theme token uses LINE Seed Sans TH with Noto Sans Thai, Inter, system-ui, and sans-serif fallback.
+- Refined Phase 2.6 visual scale:
+  - Changed the radius system to a balanced scale.
+  - Reduced overly round button, input, card, navigation, and search surfaces.
+  - Verified desktop and mobile radius values in the in-app browser.
 
 ## Current Task
 
@@ -81,6 +88,7 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 - Finance feature implementation.
 - Reminder feature implementation.
 - Task feature implementation.
+- Per-component font overrides.
 
 ## Next Recommended Task
 

@@ -1,5 +1,8 @@
 import type { ThemeConfig } from 'antd';
 
+const sabaiFontFamily =
+  '"LINE Seed Sans TH", "Noto Sans Thai", Inter, system-ui, sans-serif';
+
 export const theme: ThemeConfig = {
   token: {
     colorPrimary: '#3a8f73',
@@ -17,9 +20,9 @@ export const theme: ThemeConfig = {
     boxShadow:
       '0 18px 48px rgba(52, 116, 90, 0.14), 0 4px 16px rgba(52, 116, 90, 0.08)',
     boxShadowSecondary: '0 10px 30px rgba(52, 116, 90, 0.12)',
-    borderRadius: 18,
-    borderRadiusLG: 24,
-    borderRadiusSM: 12,
+    borderRadius: 12,
+    borderRadiusLG: 16,
+    borderRadiusSM: 8,
     controlHeight: 44,
     controlHeightLG: 48,
     fontSize: 16,
@@ -27,18 +30,17 @@ export const theme: ThemeConfig = {
     fontSizeHeading2: 28,
     fontSizeHeading3: 23,
     lineHeight: 1.62,
-    fontFamily:
-      'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    fontFamily: sabaiFontFamily,
   },
   components: {
     Button: {
-      borderRadius: 999,
+      borderRadius: 12,
       controlHeight: 44,
       controlHeightLG: 48,
       primaryShadow: '0 12px 24px rgba(58, 143, 115, 0.22)',
     },
     Card: {
-      borderRadiusLG: 24,
+      borderRadiusLG: 16,
       paddingLG: 24,
     },
     Form: {
@@ -46,7 +48,7 @@ export const theme: ThemeConfig = {
       labelColor: '#2f4f43',
     },
     Input: {
-      borderRadius: 16,
+      borderRadius: 12,
       controlHeight: 44,
     },
     Layout: {

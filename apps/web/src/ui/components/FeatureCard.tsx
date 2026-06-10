@@ -30,7 +30,7 @@ export function FeatureCard({
           <Typography.Title level={3}>{title}</Typography.Title>
           <Typography.Paragraph type="secondary">{subtitle}</Typography.Paragraph>
         </div>
-        <Button type="primary" size="large" ghost>
+        <Button type="primary" size="large" ghost className="sabai-soft-button">
           ดูภาพรวม
         </Button>
       </Flex>

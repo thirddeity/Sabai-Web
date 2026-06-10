@@ -41,7 +41,13 @@ Do not use a left sidebar or admin-dashboard layout.
 - Card surface: translucent white and green.
 - Border: translucent white or mint.
 - Shadow: soft green shadow.
-- Radius: large and friendly.
+- Radius: balanced and friendly, not overly round.
+- Balanced radius scale:
+  - Cards: about `16px`.
+  - Inputs and buttons: about `12px`.
+  - Floating navigation: about `20px`.
+  - Mobile bottom navigation: about `22px`.
+  - Search pill: about `14px`.
 - Font size: readable by default.
 - Button height: large enough for comfortable tapping.
 
