@@ -9,6 +9,8 @@
   --sabai-clear-glass-soft: rgba(255, 255, 255, 0.5);
   --sabai-sky-mint: rgba(204, 238, 236, 0.54);
   --sabai-lilac-sage: rgba(226, 221, 243, 0.42);
+  --angle-1: -75deg;
+  --angle-2: -45deg;
   color: #1f352d;
   background: #edf8ef;
   font-family:
@@ -537,11 +539,37 @@ body {
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
+  -webkit-mask-composite: destination-out;
   transition:
     --angle-1 500ms ease,
     filter 220ms ease,
     opacity 220ms ease;
+}
+
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .sabai-feature-action.ant-btn::after,
+  .sabai-feature-action.ant-btn-default::after,
+  .sabai-feature-action.ant-btn-text::after {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.3));
+    mask: none;
+    -webkit-mask: none;
+  }
+}
+
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: destination-out)) {
+  .sabai-feature-action.ant-btn::after,
+  .sabai-feature-action.ant-btn-default::after,
+  .sabai-feature-action.ant-btn-text::after {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.3));
+    mask: none;
+    -webkit-mask: none;
+  }
 }
 
 .sabai-feature-action.ant-btn > span {

@@ -212,3 +212,19 @@ Impact:
 
 - Avoid `all: unset` and keep AntD button behavior.
 - Keep amber tint out of this CTA and use subtle gray-blue translucency, bevel, and lower shadow instead.
+
+### 2026-06-11: FeatureCard CTA needs explicit browser fallbacks
+
+Decision:
+
+- Keep the frosted CTA border effect, but provide CSS fallbacks for environments without reliable `@property`, `conic-gradient`, or mask-composite support.
+- Use `-webkit-mask-composite: destination-out` instead of the legacy `xor` value for the CTA border mask.
+
+Reason:
+
+- Some production-like browser environments can ignore `@property` initial values or render mask composition differently, which can remove or flatten the glass border effect.
+
+Impact:
+
+- The CTA can keep its glass style in capable browsers while falling back to a simpler visible border in less capable environments.
+- Future decorative CSS should define normal custom-property defaults when using `@property`-registered values.

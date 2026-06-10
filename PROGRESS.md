@@ -73,6 +73,10 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
 
 - Strengthened the feature CTA glass treatment with production-safe gradient, highlight, and shadow layers.
 - Refined the feature CTA into a cooler frosted glass pill while keeping AntD `Button` as the base.
+- Added feature CTA browser compatibility fixes:
+  - Defined fallback angle custom properties outside `@property`.
+  - Changed the WebKit mask composite value from legacy `xor` to `destination-out`.
+  - Added fallback border styling when conic gradients or mask compositing are unavailable.
 
 ## Current Task
 
