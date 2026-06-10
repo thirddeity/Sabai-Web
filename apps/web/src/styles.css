@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+:root {
+  color: #1f352d;
+  background: #edf8ef;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.sabai-gradient-background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(246, 255, 249, 0.96) 0%,
+      rgba(224, 247, 230, 0.92) 48%,
+      rgba(213, 241, 229, 0.95) 100%
+    ),
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(159, 221, 188, 0.34),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(184, 232, 209, 0.32),
+      transparent 32%
+    );
+}
+
+.sabai-gradient-background::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.36), transparent 72%);
+}
+
+.sabai-gradient-background-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.sabai-glow-orb {
+  position: absolute;
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.34;
+  background: radial-gradient(
+    circle,
+    rgba(128, 204, 165, 0.44) 0%,
+    rgba(174, 226, 199, 0.18) 42%,
+    transparent 70%
+  );
+}
+
+.sabai-glow-orb-top-left {
+  top: -12%;
+  left: -12%;
+}
+
+.sabai-glow-orb-bottom-right {
+  right: -14%;
+  bottom: -16%;
+}
+
+.sabai-page-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 32px 20px;
+  animation: sabai-fade-up 360ms ease-out both;
+}
+
+.sabai-page-container-narrow {
+  width: min(100%, 520px);
+}
+
+.sabai-glass-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.84),
+    rgba(239, 253, 244, 0.7)
+  );
+  box-shadow:
+    0 18px 48px rgba(52, 116, 90, 0.14),
+    0 4px 16px rgba(52, 116, 90, 0.08);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.sabai-glass-card-hoverable:hover {
+  border-color: rgba(111, 172, 139, 0.42);
+  box-shadow:
+    0 24px 58px rgba(52, 116, 90, 0.17),
+    0 7px 20px rgba(52, 116, 90, 0.1);
+  transform: translateY(-3px);
+}
+
+.sabai-glass-card-enter {
+  animation: sabai-fade-up 320ms ease-out both;
+}
+
+.sabai-motion-card {
+  will-change: transform, opacity;
+  animation: sabai-card-rise 420ms ease-out both;
+}
+
+.sabai-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(18px);
+}
+
+.sabai-brand-link {
+  color: #2f6f5e;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sabai-brand-link:hover {
+  color: #3a8f73;
+}
+
+.sabai-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 24px;
+  text-align: center;
+}
+
+.sabai-empty-state-mark {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border: 1px solid rgba(111, 172, 139, 0.24);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(209, 244, 225, 0.72)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 12px 24px rgba(52, 116, 90, 0.12);
+}
+
+@keyframes sabai-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sabai-card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sabai-page-container,
+  .sabai-glass-card-enter,
+  .sabai-motion-card {
+    animation: none;
+  }
+
+  .sabai-glass-card,
+  .sabai-glass-card-hoverable:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .sabai-page-container {
+    padding: 22px 14px;
+  }
+
+  .sabai-topbar {
+    height: auto;
+    min-height: 64px;
+    padding: 12px 16px;
+  }
+}

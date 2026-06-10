@@ -1,0 +1,7 @@
+node_modules
+dist
+apps/*/dist
+.codex-run
+.env
+.env.*
+!.env.example

@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 0: Project control documents.
+Phase 2.5: UI Visual Foundation.
 
 Status: Completed.
 
@@ -19,26 +19,39 @@ Status: Completed.
 
 ## Phase 1: App Scaffold
 
-- [ ] Create minimal repository scaffold.
-- [ ] Add Bun workspace setup if needed.
-- [ ] Create React + Vite web app.
-- [ ] Create Hono API app.
-- [ ] Add TypeScript configuration.
-- [ ] Add basic lint, typecheck, and build commands.
+- [x] Create minimal repository scaffold.
+- [x] Add Bun workspace setup if needed.
+- [x] Create React + Vite web app.
+- [x] Create Hono API app.
+- [x] Add TypeScript configuration.
+- [x] Add basic lint, typecheck, and build commands.
 
 ## Phase 2: Frontend Foundation
 
-- [ ] Add Ant Design setup.
-- [ ] Add Tailwind CSS v4 setup for limited utility use.
-- [ ] Add `theme.ts` and `ConfigProvider`.
-- [ ] Add React Router v7 router structure.
-- [ ] Add base layouts.
-- [ ] Add shared HOCs for router, form, and breakpoint needs.
+- [x] Add Ant Design setup.
+- [x] Add Tailwind CSS v4 setup for limited utility use.
+- [x] Add `theme.ts` and `ConfigProvider`.
+- [x] Add React Router v7 router structure.
+- [x] Add base layouts.
+- [x] Add shared HOCs for router, form, and breakpoint needs.
+
+## Phase 2.5: UI Visual Foundation
+
+- [x] Improve Ant Design theme tokens.
+- [x] Add shared `PageContainer`.
+- [x] Add shared `GlassCard`.
+- [x] Add shared `MotionCard`.
+- [x] Add shared `GradientBackground`.
+- [x] Add shared `GlowOrb`.
+- [x] Add shared `EmptyState`.
+- [x] Add visual rules for AntD + Tailwind + motion.
+- [x] Apply visual foundation to login placeholder.
+- [x] Apply visual foundation to dashboard placeholder.
 
 ## Phase 3: Backend Foundation
 
-- [ ] Add Hono app entry.
-- [ ] Add health endpoint.
+- [x] Add Hono app entry.
+- [x] Add health endpoint.
 - [ ] Add Zod validation pattern.
 - [ ] Add Drizzle setup.
 - [ ] Choose Supabase Free or Neon Free.
