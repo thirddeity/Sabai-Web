@@ -2,7 +2,7 @@
 
 ## Visual Direction
 
-Sabai uses a calm glassmorphism style that feels modern, clean, soft, and easy to read for Thai users of many ages.
+Sabai uses the **Sabai Life Console** direction: a personal life control center and digital life hub, not a business admin dashboard.
 
 The UI should feel:
 
@@ -11,6 +11,28 @@ The UI should feel:
 - Clear before decorative.
 - Soft green, mint, and emerald.
 - Lightly glassy, never transparent enough to reduce readability.
+- Personal, warm, and life-focused.
+
+Do not use a left sidebar or admin-dashboard layout.
+
+## Layout Direction
+
+- Use Bento Grid as the main dashboard layout.
+- Use Floating Top Navigation on desktop.
+- Use Bottom Pill Navigation on mobile.
+- The first screen after login is a Life Hub.
+- The Life Hub starts with a greeting hero: "วันนี้มีอะไรสำคัญบ้าง".
+- Include a large global search pill.
+- Show 4 feature cards:
+  - Digital Vault
+  - Finance Tracker
+  - Schedule & Reminder
+  - Task Management
+- Show today summary cards:
+  - นัดวันนี้
+  - งานค้าง
+  - บิลใกล้ตัด
+  - เอกสารใกล้หมดอายุ
 
 ## Core Tokens
 
@@ -33,6 +55,10 @@ The UI should feel:
   - `MotionCard`
   - `GradientBackground`
   - `GlowOrb`
+  - `FeatureCard`
+  - `StatCard`
+  - `FloatingTopNav`
+  - `MobileBottomNav`
   - `EmptyState`
 - Use Tailwind only for small spacing or responsive details.
 - Use project CSS classes with the `sabai-` prefix.

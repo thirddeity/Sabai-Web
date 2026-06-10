@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-Phase 2.5: UI Visual Foundation.
+Phase 2.6: Frontend UI Prototype.
 
-Status: Completed.
+Status: In progress.
 
 ## Phase 0: Project Control
 
@@ -47,6 +47,19 @@ Status: Completed.
 - [x] Add visual rules for AntD + Tailwind + motion.
 - [x] Apply visual foundation to login placeholder.
 - [x] Apply visual foundation to dashboard placeholder.
+
+## Phase 2.6: Frontend UI Prototype
+
+- [x] Improve login UI mock.
+- [x] Improve dashboard UI mock.
+- [x] Add feature cards for 4 core modules.
+- [x] Add mock dashboard summary.
+- [x] Add shared StatCard.
+- [x] Add shared FeatureCard.
+- [x] Add responsive app navigation.
+- [x] Add subtle motion and hover effects.
+- [ ] Add loading and empty state visuals.
+- [ ] Verify mobile and desktop layout.
 
 ## Phase 3: Backend Foundation
 

@@ -2,7 +2,7 @@
 
 ## Current Status
 
-Phase 2.5 UI Visual Foundation is complete for the placeholder web UI.
+Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direction.
 
 ## Completed
 
@@ -37,10 +37,15 @@ Phase 2.5 UI Visual Foundation is complete for the placeholder web UI.
 - Applied the visual foundation to login and dashboard placeholders.
 - Removed the obsolete Ant Design React 19 compatibility patch now that the web app uses AntD v6.
 - Completed Phase 2.5 with a shared `MotionCard` CSS-motion wrapper.
+- Started Phase 2.6 Frontend UI Prototype:
+  - Defined Sabai Life Console as the UI direction.
+  - Added Life Hub bento layout with mock dashboard data.
+  - Added floating top navigation and mobile bottom pill navigation.
+  - Added feature and stat cards for the placeholder dashboard.
 
 ## Current Task
 
-Phase 2.5: UI Visual Foundation for Sabai placeholder pages is complete.
+Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 
 ## Files Created Or Updated In This Task
 
@@ -53,6 +58,11 @@ Phase 2.5: UI Visual Foundation for Sabai placeholder pages is complete.
 - `apps/web/src/layouts/main.tsx`
 - `apps/web/src/modules/auth/pages/index.tsx`
 - `apps/web/src/modules/dashboard/pages/index.tsx`
+- `apps/web/src/modules/dashboard/mock.ts`
+- `apps/web/src/ui/components/FeatureCard.tsx`
+- `apps/web/src/ui/components/StatCard.tsx`
+- `apps/web/src/ui/layout/FloatingTopNav.tsx`
+- `apps/web/src/ui/layout/MobileBottomNav.tsx`
 - `apps/web/src/ui/layout/PageContainer.tsx`
 - `apps/web/src/ui/effects/GlassCard.tsx`
 - `apps/web/src/ui/effects/MotionCard.tsx`
@@ -74,7 +84,7 @@ Phase 2.5: UI Visual Foundation for Sabai placeholder pages is complete.
 
 ## Next Recommended Task
 
-Start Phase 3 backend foundation with a small Zod validation pattern before Drizzle and Better Auth.
+Finish remaining Phase 2.6 visual states and responsive QA before starting Phase 3 backend foundation.
 
 Before starting that task, read:
 
