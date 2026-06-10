@@ -134,3 +134,37 @@ Impact:
 - Keep `Sabai` as the brand name, but avoid primary labels such as `Life Hub`, `Modules`, `Today Summary`, `Hub`, and `More`.
 - Dashboard labels should use concrete Thai words such as `หน้าแรก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
 - Placeholder copy should clearly say when data is mocked or when auth/backend is not connected.
+
+### 2026-06-11: Responsive layout decisions must use `withBreakpoint`
+
+Decision:
+
+- Treat `withBreakpoint` as the default mechanism for responsive layout decisions in the web app.
+- Keep `Grid.useBreakpoint()` inside the shared HOC only.
+- Allow CSS media queries only for minor visual tweaks, not for deciding whether layout shells render.
+
+Reason:
+
+- The layout shell must stay predictable and should not drift into ad hoc media-query behavior that hides or swaps structural components.
+
+Impact:
+
+- Components under `apps/web/src/ui/layout/` should use breakpoint state from `withBreakpoint` when they need mobile/desktop differences.
+- `FloatingTopNav`, `MobileBottomNav`, `PageContainer`, and similar shells should not rely on `styles.css` to control structural visibility.
+
+### 2026-06-11: Use AntD `md` for app nav shell switching
+
+Decision:
+
+- Show `FloatingTopNav` when `screens.md` is true.
+- Show `MobileBottomNav` when `screens.md` is false.
+
+Reason:
+
+- The desktop top nav includes the brand area plus five primary actions, so it should not be forced into small tablet or phone widths.
+- Using AntD's built-in `md` breakpoint keeps shell behavior aligned with `withBreakpoint`.
+
+Impact:
+
+- CSS may still adjust spacing and visual details at small widths.
+- CSS must not decide whether top or bottom navigation exists.

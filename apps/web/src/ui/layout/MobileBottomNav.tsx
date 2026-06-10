@@ -1,4 +1,5 @@
-import { withMainStore, WithMainStoreProps } from '@/hoc/withMainStore';
+import type { WithMainStoreProps } from '@/hoc/withMainStore';
+import { withMainStore } from '@/hoc/withMainStore';
 import { Button, Flex } from 'antd';
 import { Component } from 'react';
 
@@ -6,7 +7,7 @@ import { Component } from 'react';
 class MobileBottomNavComponent extends Component<WithMainStoreProps> {
   render() {
     const { mainStore: { tabs } } = this.props;
-    console.log("MobileBottomNav tabs:", tabs); // Debug log to check tabs data
+
     return (
       <nav className="sabai-mobile-bottom-nav" aria-label="เมนูหลักบนมือถือ">
         {tabs.map((item, index) => (

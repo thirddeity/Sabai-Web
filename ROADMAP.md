@@ -57,14 +57,15 @@ Status: In progress.
 - [x] Add shared StatCard.
 - [x] Add shared FeatureCard.
 - [x] Add responsive app navigation.
+- [x] Move responsive navigation shell visibility to `withBreakpoint`.
 - [x] Add subtle motion and hover effects.
 - [x] Apply Thai-first global typography with LINE Seed Sans TH.
 - [x] Refine glassmorphism, warm accents, and hover shadows.
 - [ ] Add loading and empty state visuals.
 - [x] Verify mobile and desktop layout.
 - [x] Refine the "ดูภาพรวม" CTA into an AntD-based glossy button shell.
-
 - [x] Refine Thai primary labels and add a dashboard life visual anchor.
+- [x] Clarify responsive layout policy in `AGENTS.md` so layout shell decisions must use `withBreakpoint`.
 
 ## Phase 3: Backend Foundation
 

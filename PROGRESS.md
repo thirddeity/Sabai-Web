@@ -3,6 +3,7 @@
 ## Current Status
 
 Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direction.
+Documentation maintenance is in progress to lock down responsive layout rules for `withBreakpoint`.
 
 ## Completed
 
@@ -45,6 +46,7 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
 - Applied Thai-first global typography:
   - LINE Seed Sans TH is loaded in base CSS.
   - Ant Design theme token uses LINE Seed Sans TH with Noto Sans Thai, Inter, system-ui, and sans-serif fallback.
+- Clarified project rules so responsive layout decisions in `apps/web/src/ui/layout/` must go through `withBreakpoint`.
 - Refined Phase 2.6 visual scale:
   - Changed the radius system to a balanced scale.
   - Reduced overly round button, input, card, navigation, and search surfaces.
@@ -62,6 +64,12 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
   - Added a mock `สิ่งที่ควรดูวันนี้` priority strip.
   - Cleaned visible placeholder copy on dashboard and login pages.
 
+- Migrated responsive navigation shell rendering from CSS media-query visibility to `withBreakpoint`:
+  - `MainLayout` now renders `FloatingTopNav` at AntD `md` and above.
+  - `MainLayout` now renders `MobileBottomNav` below AntD `md`.
+  - Removed structural nav show/hide CSS and the mobile nav debug log.
+- Refined `withMainStore` typing and wrapper metadata so TypeScript and IDE navigation have clearer component information.
+
 ## Current Task
 
 Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
@@ -72,14 +80,19 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 - `PROGRESS.md`
 - `DECISIONS.md`
 - `UI_GUIDE.md`
+- `apps/web/src/main.tsx`
 - `apps/web/src/assets/sabai-life-visual.svg`
+- `apps/web/src/hoc/withMainStore.tsx`
 - `apps/web/src/modules/auth/pages/index.tsx`
 - `apps/web/src/modules/dashboard/pages/index.tsx`
 - `apps/web/src/modules/dashboard/mock.ts`
+- `apps/web/src/layouts/main.tsx`
+- `apps/web/src/store/MainStore.tsx`
 - `apps/web/src/ui/components/FeatureCard.tsx`
 - `apps/web/src/ui/layout/FloatingTopNav.tsx`
 - `apps/web/src/ui/layout/MobileBottomNav.tsx`
 - `apps/web/src/styles.css`
+- `AGENTS.md`
 
 ## Out Of Scope For This Task
 

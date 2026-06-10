@@ -1,4 +1,4 @@
-import { MenuItem } from '@/types/main-store-types';
+import type { MenuItem } from '@/types/main-store-types';
 import { HomeOutlined, FileDoneOutlined, CreditCardOutlined, ScheduleOutlined, OrderedListOutlined } from '@ant-design/icons';
 import { createStore } from 'zustand/vanilla';
 
