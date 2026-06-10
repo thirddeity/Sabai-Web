@@ -71,7 +71,6 @@ Status: In progress.
 
 - [x] Strengthen the feature CTA glass treatment for production rendering.
 - [x] Refine the feature CTA into a frosted glass pill based on the reference style.
-- [x] Make the feature CTA use deterministic frosted-glass styling without browser-native blur or mask effects.
 
 ## Phase 3: Backend Foundation
 

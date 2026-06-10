@@ -212,19 +212,3 @@ Impact:
 
 - Avoid `all: unset` and keep AntD button behavior.
 - Keep amber tint out of this CTA and use subtle gray-blue translucency, bevel, and lower shadow instead.
-
-### 2026-06-11: FeatureCard CTA uses deterministic glass instead of native blur
-
-Decision:
-
-- Build the `เน€เธโ€เน€เธเธเน€เธย เน€เธเธ’เน€เธยเน€เธเธเน€เธเธเน€เธเธ` CTA glass effect with deterministic gradients, real border/outline, inset highlights, and shadows.
-- Do not rely on `backdrop-filter`, `mask-composite`, `mix-blend-mode`, or CSS `@property` for this CTA.
-
-Reason:
-
-- Local dev, production preview, and the in-app browser can render native blur and mask composition differently, causing the CTA to lose the intended frosted glass look.
-
-Impact:
-
-- Future CTA styling should prefer stable CSS primitives over browser-native glass effects when cross-environment visual consistency matters.
-- The CTA remains an Ant Design `Button` with project-specific visual styling.

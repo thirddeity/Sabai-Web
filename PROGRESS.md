@@ -73,10 +73,6 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
 
 - Strengthened the feature CTA glass treatment with production-safe gradient, highlight, and shadow layers.
 - Refined the feature CTA into a cooler frosted glass pill while keeping AntD `Button` as the base.
-- Reworked the feature CTA into a deterministic frosted-glass pill:
-  - Removed browser-dependent blur, mask, and blend effects from the CTA.
-  - Used layered gradients, real border/outline, inset highlights, and stable shadows instead.
-  - Added a cool gray-blue action shell backing so the CTA looks more consistent across local, preview, and production.
 
 ## Current Task
 
@@ -114,7 +110,6 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 - Reminder feature implementation.
 - Task feature implementation.
 - Per-component font overrides.
-- Routing, API, auth, and data behavior changes.
 
 ## Next Recommended Task
 
