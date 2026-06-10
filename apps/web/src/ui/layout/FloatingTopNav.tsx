@@ -1,7 +1,7 @@
 import { Button, Flex, Typography } from 'antd';
 import { Link } from 'react-router';
 
-const navItems = ['Life Hub', 'Search', 'Today', 'Modules'];
+const navItems = ['หน้าแรก', 'ค้นหา', 'วันนี้', 'เมนู'];
 
 export function FloatingTopNav() {
   return (
@@ -17,7 +17,7 @@ export function FloatingTopNav() {
         ))}
       </Flex>
       <Typography.Text type="secondary" className="sabai-nav-note">
-        Life Console
+        ศูนย์รวมชีวิต
       </Typography.Text>
     </header>
   );

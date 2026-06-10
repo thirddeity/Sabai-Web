@@ -62,6 +62,9 @@ Status: In progress.
 - [x] Refine glassmorphism, warm accents, and hover shadows.
 - [ ] Add loading and empty state visuals.
 - [x] Verify mobile and desktop layout.
+- [x] Refine the "ดูภาพรวม" CTA into an AntD-based glossy button shell.
+
+- [x] Refine Thai primary labels and add a dashboard life visual anchor.
 
 ## Phase 3: Backend Foundation
 

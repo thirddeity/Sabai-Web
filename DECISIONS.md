@@ -102,4 +102,35 @@ Impact:
 
 - Glass cards should use translucent white surfaces, subtle border highlights, and restrained shadows.
 - Feature cards may mix emerald, amber, sky-mint, and soft lilac-sage tints.
-- Important placeholder actions such as `ดูภาพรวม` can use a warm filled treatment instead of a plain ghost button.
+- Important placeholder actions can use a warm filled treatment instead of a plain ghost button.
+
+### 2026-06-10: Use AntD as the base for decorative feature actions
+
+Decision:
+
+- Keep feature CTA buttons built on Ant Design `Button` and layer decorative glass styling on top instead of resetting to a raw custom button.
+
+Reason:
+
+- This preserves AntD behavior, accessibility, and sizing while still allowing the Sabai visual language to feel distinctive.
+
+Impact:
+
+- Future feature CTA buttons should start from AntD `Button` and add local wrappers or pseudo-elements for gloss, border light, and dotted-grid decoration.
+- Avoid `all: unset` on AntD buttons for this pattern unless there is a very specific reason.
+
+### 2026-06-10: Use clear Thai labels for primary UI
+
+Decision:
+
+- Use clear Thai wording as the default for primary navigation, dashboard headings, and important placeholder labels.
+
+Reason:
+
+- Sabai is intended for Thai users of many ages, so important labels should be understandable without knowing product or dashboard terminology.
+
+Impact:
+
+- Keep `Sabai` as the brand name, but avoid primary labels such as `Life Hub`, `Modules`, `Today Summary`, `Hub`, and `More`.
+- Dashboard labels should use concrete Thai words such as `หน้าแรก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
+- Placeholder copy should clearly say when data is mocked or when auth/backend is not connected.

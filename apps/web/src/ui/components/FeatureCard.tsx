@@ -6,11 +6,13 @@ export interface FeatureCardProps {
   title: string;
   subtitle: string;
   metric: string;
+  cue: string;
   tone?: 'emerald' | 'amber' | 'sky' | 'lilac';
   motionDelayMs?: number;
 }
 
 export function FeatureCard({
+  cue,
   metric,
   motionDelayMs = 0,
   subtitle,
@@ -21,22 +23,27 @@ export function FeatureCard({
     <MotionCard
       className={`sabai-feature-card sabai-feature-card-${tone}`}
       motionDelayMs={motionDelayMs}
+      styles={{ body: { height: '100%' } }}
     >
-      <Flex vertical gap="large">
+      <Flex vertical gap="large" justify="space-between" style={{ height: '100%' }}>
         <div>
-          <Typography.Text className="sabai-feature-metric">
-            {metric}
-          </Typography.Text>
+          <Flex align="center" gap={10} wrap="wrap" className="sabai-feature-topline">
+            <Typography.Text className="sabai-feature-cue">
+              {cue}
+            </Typography.Text>
+            <Typography.Text className="sabai-feature-metric">
+              {metric}
+            </Typography.Text>
+          </Flex>
           <Typography.Title level={3}>{title}</Typography.Title>
           <Typography.Paragraph type="secondary">{subtitle}</Typography.Paragraph>
         </div>
-        <Button
-          type="primary"
-          size="large"
-          className="sabai-soft-button sabai-feature-action"
-        >
-          ดูภาพรวม
-        </Button>
+        <div className="sabai-feature-action-shell">
+          <div className="sabai-feature-action-shadow" aria-hidden="true" />
+          <Button type="primary" size="large" className="sabai-feature-action">
+            ดูภาพรวม
+          </Button>
+        </div>
       </Flex>
     </MotionCard>
   );

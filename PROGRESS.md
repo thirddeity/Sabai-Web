@@ -6,7 +6,7 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
 
 ## Completed
 
-- Created initial project control document set:
+- Created the initial project control document set:
   - `PROJECT.md`
   - `MVP.md`
   - `TECH_STACK.md`
@@ -14,7 +14,7 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
   - `ROADMAP.md`
   - `PROGRESS.md`
   - `DECISIONS.md`
-- Created initial Bun workspace scaffold:
+- Created the initial Bun workspace scaffold:
   - `apps/web` for React + Vite frontend.
   - `apps/api` for Hono backend.
   - Root TypeScript, lint, typecheck, and build scripts.
@@ -54,6 +54,13 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
   - Reduced heavy hover shadows and kept card lift subtle.
   - Added soft amber, peach, sky-mint, and lilac-sage variety to the dashboard placeholder cards.
   - Made the `ดูภาพรวม` feature action more colorful while keeping it calm and readable.
+- Refined the `ดูภาพรวม` feature button to use AntD as the base with a dotted-grid glass treatment.
+
+- Refined Phase 2.6 Thai-first dashboard usability:
+  - Replaced primary navigation and dashboard section labels with clear Thai wording.
+  - Added a soft dashboard life visual anchor.
+  - Added a mock `สิ่งที่ควรดูวันนี้` priority strip.
+  - Cleaned visible placeholder copy on dashboard and login pages.
 
 ## Current Task
 
@@ -63,24 +70,16 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 
 - `ROADMAP.md`
 - `PROGRESS.md`
+- `DECISIONS.md`
 - `UI_GUIDE.md`
-- `apps/web/src/configs/theme.ts`
-- `apps/web/src/styles.css`
-- `apps/web/src/layouts/login.tsx`
-- `apps/web/src/layouts/main.tsx`
+- `apps/web/src/assets/sabai-life-visual.svg`
 - `apps/web/src/modules/auth/pages/index.tsx`
 - `apps/web/src/modules/dashboard/pages/index.tsx`
 - `apps/web/src/modules/dashboard/mock.ts`
 - `apps/web/src/ui/components/FeatureCard.tsx`
-- `apps/web/src/ui/components/StatCard.tsx`
 - `apps/web/src/ui/layout/FloatingTopNav.tsx`
 - `apps/web/src/ui/layout/MobileBottomNav.tsx`
-- `apps/web/src/ui/layout/PageContainer.tsx`
-- `apps/web/src/ui/effects/GlassCard.tsx`
-- `apps/web/src/ui/effects/MotionCard.tsx`
-- `apps/web/src/ui/effects/GradientBackground.tsx`
-- `apps/web/src/ui/effects/GlowOrb.tsx`
-- `apps/web/src/ui/components/EmptyState.tsx`
+- `apps/web/src/styles.css`
 
 ## Out Of Scope For This Task
 
@@ -97,7 +96,7 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 
 ## Next Recommended Task
 
-Finish remaining Phase 2.6 visual states and responsive QA before starting Phase 3 backend foundation.
+Finish the remaining Phase 2.6 visual states and responsive QA before starting Phase 3 backend foundation.
 
 Before starting that task, read:
 

@@ -23,16 +23,26 @@ Do not use a left sidebar or admin-dashboard layout.
 - The first screen after login is a Life Hub.
 - The Life Hub starts with a greeting hero: "วันนี้มีอะไรสำคัญบ้าง".
 - Include a large global search pill.
+- Include a soft life visual card in the hero so the dashboard feels warm and personal.
+- Include a short priority strip named "สิ่งที่ควรดูวันนี้".
 - Show 4 feature cards:
-  - Digital Vault
-  - Finance Tracker
-  - Schedule & Reminder
-  - Task Management
+  - เอกสารสำคัญ
+  - การเงิน
+  - นัดหมายและเตือน
+  - งานที่ต้องทำ
 - Show today summary cards:
   - นัดวันนี้
   - งานค้าง
   - บิลใกล้ตัด
   - เอกสารใกล้หมดอายุ
+
+## Thai Wording Rules
+
+- Use clear Thai labels for primary navigation and section headings.
+- Keep `Sabai` as the brand name, but avoid English labels for everyday actions.
+- Prefer concrete words such as `หน้าแรก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
+- Avoid abstract template words such as `Life Hub`, `Modules`, `Today Summary`, `Hub`, and `More` in visible primary UI.
+- Placeholder text must clearly say when a screen uses mock data or is not connected to a real feature yet.
 
 ## Core Tokens
 

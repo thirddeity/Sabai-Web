@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Sabai life console visual</title>
+  <desc id="desc">A soft abstract life console illustration with documents, calendar, finance, and task cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="62" y1="46" x2="574" y2="474" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FFF9"/>
+      <stop offset=".52" stop-color="#DDF7EA"/>
+      <stop offset="1" stop-color="#FFE6C8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="142" y1="72" x2="498" y2="446" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#F2FFF7" stop-opacity=".64"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="174" y1="129" x2="451" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#55B98E"/>
+      <stop offset="1" stop-color="#2F8B6E"/>
+    </linearGradient>
+    <filter id="shadow" x="48" y="28" width="544" height="460" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" flood-color="#34745A" flood-opacity=".14" stdDeviation="24"/>
+    </filter>
+  </defs>
+  <rect width="640" height="520" rx="48" fill="url(#bg)"/>
+  <circle cx="112" cy="100" r="70" fill="#BFEFD6" opacity=".72"/>
+  <circle cx="528" cy="130" r="86" fill="#FFE5C0" opacity=".72"/>
+  <circle cx="520" cy="408" r="76" fill="#D7F5F4" opacity=".72"/>
+  <g filter="url(#shadow)">
+    <rect x="118" y="76" width="404" height="350" rx="34" fill="url(#card)" stroke="#FFFFFF" stroke-opacity=".86" stroke-width="2"/>
+    <rect x="154" y="118" width="176" height="132" rx="24" fill="#E8FFF2" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="2"/>
+    <rect x="362" y="118" width="120" height="132" rx="24" fill="#FFF0D8" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="2"/>
+    <rect x="154" y="282" width="140" height="98" rx="22" fill="#E5F8F7" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="2"/>
+    <rect x="322" y="282" width="160" height="98" rx="22" fill="#F0ECFF" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="2"/>
+    <rect x="188" y="153" width="74" height="10" rx="5" fill="#2F8B6E" opacity=".72"/>
+    <rect x="188" y="178" width="106" height="10" rx="5" fill="#87CFA9" opacity=".72"/>
+    <rect x="188" y="203" width="82" height="10" rx="5" fill="#B7E7CD" opacity=".9"/>
+    <path d="M410 150c0-10 8-18 18-18s18 8 18 18v54h-36v-54Z" fill="#D99B4A" opacity=".85"/>
+    <path d="M398 182h60v34c0 8-6 14-14 14h-32c-8 0-14-6-14-14v-34Z" fill="#FFD89E"/>
+    <rect x="182" y="316" width="74" height="10" rx="5" fill="#67A9BD" opacity=".72"/>
+    <rect x="182" y="340" width="82" height="10" rx="5" fill="#A7DCDA" opacity=".88"/>
+    <circle cx="360" cy="330" r="16" fill="#7D6FB3" opacity=".72"/>
+    <path d="m350 330 7 7 16-18" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+    <rect x="386" y="318" width="58" height="10" rx="5" fill="#9E91C9" opacity=".7"/>
+    <rect x="386" y="342" width="70" height="10" rx="5" fill="#CFC8EC" opacity=".9"/>
+  </g>
+  <path d="M116 424c56 30 116 45 180 45 92 0 166-29 230-82" fill="none" stroke="url(#emerald)" stroke-linecap="round" stroke-width="10" opacity=".24"/>
+</svg>

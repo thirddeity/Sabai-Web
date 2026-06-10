@@ -1,10 +1,10 @@
 import { Button } from 'antd';
 
-const mobileItems = ['Hub', 'Search', 'Today', 'More'];
+const mobileItems = ['หน้าแรก', 'ค้นหา', 'วันนี้', 'เมนู'];
 
 export function MobileBottomNav() {
   return (
-    <nav className="sabai-mobile-bottom-nav" aria-label="Mobile navigation">
+    <nav className="sabai-mobile-bottom-nav" aria-label="เมนูหลักบนมือถือ">
       {mobileItems.map((item) => (
         <Button key={item} type="text" className="sabai-nav-button">
           {item}

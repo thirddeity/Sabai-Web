@@ -15,13 +15,14 @@ export class LoginPage extends Component {
         <Flex vertical gap="middle">
           <div>
             <Typography.Text className="sabai-kicker">
-              Sabai Life Console
+              Sabai
             </Typography.Text>
             <Typography.Title level={2} className="!mb-2">
-              กลับเข้าสู่พื้นที่ชีวิตของคุณ
+              กลับเข้าสู่พื้นที่จัดการชีวิตของคุณ
             </Typography.Title>
             <Typography.Paragraph type="secondary">
-              Placeholder สำหรับโครง auth ในอนาคต ยังไม่มีการเข้าสู่ระบบจริง
+              หน้านี้เป็นตัวอย่างสำหรับโครงสร้างการเข้าสู่ระบบในอนาคต
+              ตอนนี้ยังไม่ได้เชื่อมต่อ auth จริง
             </Typography.Paragraph>
           </div>
         </Flex>
@@ -30,14 +31,14 @@ export class LoginPage extends Component {
             <Input placeholder="user@example.com" />
           </Form.Item>
           <Form.Item label="รหัสผ่าน">
-            <Input.Password placeholder="ยังไม่เปิดใช้งาน" />
+            <Input.Password placeholder="ยังไม่ได้เปิดใช้งาน" />
           </Form.Item>
           <Button type="primary" size="large" block className="sabai-soft-button">
-            ยังไม่เชื่อม auth
+            ยังไม่ได้เชื่อมต่อการเข้าสู่ระบบ
           </Button>
         </Form>
         <div className="mt-4 text-center">
-          <Link to="/dashboard">ไปหน้า dashboard placeholder</Link>
+          <Link to="/dashboard">ไปหน้าตัวอย่าง Dashboard</Link>
         </div>
       </GlassCard>
     );

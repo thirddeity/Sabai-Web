@@ -3,6 +3,7 @@ export interface FeatureCardMock {
   subtitle: string;
   metric: string;
   tone: 'emerald' | 'amber' | 'sky' | 'lilac';
+  cue: string;
 }
 
 export interface SummaryCardMock {
@@ -11,30 +12,58 @@ export interface SummaryCardMock {
   detail: string;
 }
 
+export interface PriorityItemMock {
+  label: string;
+  detail: string;
+  tone: 'emerald' | 'amber' | 'sky';
+}
+
 export const dashboardFeatures: FeatureCardMock[] = [
   {
-    title: 'Digital Vault',
-    subtitle: 'เอกสารสำคัญและข้อมูลส่วนตัว',
+    title: 'เอกสารสำคัญ',
+    subtitle: 'เก็บและดูแลเอกสารส่วนตัวที่ต้องไม่ลืม',
     metric: '12 รายการ',
     tone: 'emerald',
+    cue: 'เอกสาร',
   },
   {
-    title: 'Finance Tracker',
-    subtitle: 'รายรับ รายจ่าย และบิลใกล้ตัด',
+    title: 'การเงิน',
+    subtitle: 'ดูรายรับ รายจ่าย และบิลที่ใกล้ถึงกำหนด',
     metric: '3 บิล',
     tone: 'amber',
+    cue: 'เงิน',
   },
   {
-    title: 'Schedule & Reminder',
-    subtitle: 'นัดหมาย วันสำคัญ และการเตือน',
+    title: 'นัดหมายและเตือน',
+    subtitle: 'รวมวันสำคัญ นัดหมาย และสิ่งที่ต้องเตือน',
     metric: '2 วันนี้',
+    tone: 'sky',
+    cue: 'นัด',
+  },
+  {
+    title: 'งานที่ต้องทำ',
+    subtitle: 'ติดตามงานค้างและสิ่งที่ควรจัดการต่อ',
+    metric: '5 งาน',
+    tone: 'lilac',
+    cue: 'งาน',
+  },
+];
+
+export const priorityItems: PriorityItemMock[] = [
+  {
+    label: 'นัดบ่ายนี้',
+    detail: 'มี 2 รายการที่ควรเตรียมตัว',
     tone: 'sky',
   },
   {
-    title: 'Task Management',
-    subtitle: 'งานค้างและสิ่งที่ต้องทำต่อ',
-    metric: '5 งาน',
-    tone: 'lilac',
+    label: 'บิลใกล้ครบกำหนด',
+    detail: 'มี 3 บิลภายใน 7 วัน',
+    tone: 'amber',
+  },
+  {
+    label: 'เอกสารใกล้หมดอายุ',
+    detail: 'มี 1 รายการที่ควรตรวจสอบ',
+    tone: 'emerald',
   },
 ];
 
