@@ -71,6 +71,8 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
 - Refined `withMainStore` typing and wrapper metadata so TypeScript and IDE navigation have clearer component information.
 - Normalized the `ดูภาพรวม` CTA to use the base AntD button variant so local and production styling stay consistent.
 
+- Strengthened the feature CTA glass treatment with production-safe gradient, highlight, and shadow layers.
+
 ## Current Task
 
 Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.

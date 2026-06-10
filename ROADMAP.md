@@ -69,6 +69,8 @@ Status: In progress.
 
 - [x] Normalize the `ดูภาพรวม` CTA to use the base AntD button variant for stable production styling.
 
+- [x] Strengthen the feature CTA glass treatment for production rendering.
+
 ## Phase 3: Backend Foundation
 
 - [x] Add Hono app entry.

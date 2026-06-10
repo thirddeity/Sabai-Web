@@ -40,7 +40,7 @@ export function FeatureCard({
         </div>
         <div className="sabai-feature-action-shell">
           <div className="sabai-feature-action-shadow" aria-hidden="true" />
-          <Button size="large" className="sabai-feature-action">
+          <Button type="text" size="large" className="sabai-feature-action">
             ดูภาพรวม
           </Button>
         </div>

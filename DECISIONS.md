@@ -183,3 +183,17 @@ Impact:
 
 - `FeatureCard` CTA styling should come from the local decorative CSS shell rather than AntD primary color behavior.
 - Keep state styling explicit for hover, active, focus-visible, and disabled states.
+
+### 2026-06-11: Avoid fragile mask-based glass borders on the FeatureCard CTA
+
+Decision:
+
+- Use layered gradients, inset highlights, and simple pseudo-element borders for the `เธ”เธนเธ เธฒเธเธฃเธงเธก` CTA glass treatment.
+
+Reason:
+
+- The previous mask-composite border effect could render too subtly or inconsistently in production.
+
+Impact:
+
+- Future CTA glass refinements should prefer production-safe background, shadow, and border layers over mask-composite effects.
