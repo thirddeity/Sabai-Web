@@ -38,9 +38,10 @@ Do not use a left sidebar or admin-dashboard layout.
 
 - Primary color: soft emerald.
 - Background: light mint green gradient.
-- Card surface: translucent white and green.
+- Card surface: clear glass with mostly translucent white and only a light green tint.
 - Border: translucent white or mint.
 - Shadow: soft green shadow.
+- Warm accent: soft amber `#d99b4a` and peach glass tint for selected calls to action.
 - Radius: balanced and friendly, not overly round.
 - Balanced radius scale:
   - Cards: about `16px`.
@@ -50,6 +51,15 @@ Do not use a left sidebar or admin-dashboard layout.
   - Search pill: about `14px`.
 - Font size: readable by default.
 - Button height: large enough for comfortable tapping.
+
+## Clear Glass + Warm Accent
+
+- Use clear glass surfaces first, then add color as a soft tint.
+- Keep card opacity readable: glass should feel lighter, but text contrast must stay strong.
+- Use warm amber and peach only as accents for important actions or variety inside feature cards.
+- Avoid making every dashboard card green; mix emerald, amber, sky-mint, and soft lilac-sage tints.
+- Prefer a subtle border glow over a heavy hover shadow.
+- Hover lift should stay around `-2px` and should not make cards feel jumpy.
 
 ## Component Rules
 

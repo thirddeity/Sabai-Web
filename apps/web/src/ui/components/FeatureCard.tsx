@@ -6,7 +6,7 @@ export interface FeatureCardProps {
   title: string;
   subtitle: string;
   metric: string;
-  tone?: 'emerald' | 'mint' | 'sage' | 'leaf';
+  tone?: 'emerald' | 'amber' | 'sky' | 'lilac';
   motionDelayMs?: number;
 }
 
@@ -30,7 +30,11 @@ export function FeatureCard({
           <Typography.Title level={3}>{title}</Typography.Title>
           <Typography.Paragraph type="secondary">{subtitle}</Typography.Paragraph>
         </div>
-        <Button type="primary" size="large" ghost className="sabai-soft-button">
+        <Button
+          type="primary"
+          size="large"
+          className="sabai-soft-button sabai-feature-action"
+        >
           ดูภาพรวม
         </Button>
       </Flex>

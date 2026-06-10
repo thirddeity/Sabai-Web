@@ -59,6 +59,7 @@ Status: In progress.
 - [x] Add responsive app navigation.
 - [x] Add subtle motion and hover effects.
 - [x] Apply Thai-first global typography with LINE Seed Sans TH.
+- [x] Refine glassmorphism, warm accents, and hover shadows.
 - [ ] Add loading and empty state visuals.
 - [x] Verify mobile and desktop layout.
 

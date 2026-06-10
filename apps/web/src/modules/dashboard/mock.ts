@@ -2,7 +2,7 @@ export interface FeatureCardMock {
   title: string;
   subtitle: string;
   metric: string;
-  tone: 'emerald' | 'mint' | 'sage' | 'leaf';
+  tone: 'emerald' | 'amber' | 'sky' | 'lilac';
 }
 
 export interface SummaryCardMock {
@@ -22,19 +22,19 @@ export const dashboardFeatures: FeatureCardMock[] = [
     title: 'Finance Tracker',
     subtitle: 'รายรับ รายจ่าย และบิลใกล้ตัด',
     metric: '3 บิล',
-    tone: 'mint',
+    tone: 'amber',
   },
   {
     title: 'Schedule & Reminder',
     subtitle: 'นัดหมาย วันสำคัญ และการเตือน',
     metric: '2 วันนี้',
-    tone: 'sage',
+    tone: 'sky',
   },
   {
     title: 'Task Management',
     subtitle: 'งานค้างและสิ่งที่ต้องทำต่อ',
     metric: '5 งาน',
-    tone: 'leaf',
+    tone: 'lilac',
   },
 ];
 

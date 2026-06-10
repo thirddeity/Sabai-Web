@@ -87,3 +87,19 @@ Impact:
 
 - Font family should be applied globally through Ant Design theme tokens and base CSS.
 - Feature components should not repeat `font-family` declarations unless there is a clear future exception.
+
+### 2026-06-10: Use Clear Glass + Warm Accent for Sabai Life Console
+
+Decision:
+
+- Use clear glass surfaces with soft emerald as the base and warm amber/peach as a supporting accent.
+
+Reason:
+
+- The UI should feel more like a personal life hub than a green-only admin dashboard, while staying calm and readable for all ages.
+
+Impact:
+
+- Glass cards should use translucent white surfaces, subtle border highlights, and restrained shadows.
+- Feature cards may mix emerald, amber, sky-mint, and soft lilac-sage tints.
+- Important placeholder actions such as `ดูภาพรวม` can use a warm filled treatment instead of a plain ghost button.

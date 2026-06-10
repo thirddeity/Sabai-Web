@@ -49,6 +49,11 @@ Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direc
   - Changed the radius system to a balanced scale.
   - Reduced overly round button, input, card, navigation, and search surfaces.
   - Verified desktop and mobile radius values in the in-app browser.
+- Refined Phase 2.6 glass and accent direction:
+  - Moved the visual system toward Clear Glass + Warm Accent.
+  - Reduced heavy hover shadows and kept card lift subtle.
+  - Added soft amber, peach, sky-mint, and lilac-sage variety to the dashboard placeholder cards.
+  - Made the `ดูภาพรวม` feature action more colorful while keeping it calm and readable.
 
 ## Current Task
 
