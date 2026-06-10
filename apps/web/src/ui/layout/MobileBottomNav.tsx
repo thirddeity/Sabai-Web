@@ -1,25 +1,26 @@
-import { CreditCardOutlined, FileDoneOutlined, HomeOutlined, OrderedListOutlined, ScheduleOutlined } from '@ant-design/icons';
+import { withMainStore, WithMainStoreProps } from '@/hoc/withMainStore';
 import { Button, Flex } from 'antd';
+import { Component } from 'react';
 
-const navItems = [
-  { icon: <HomeOutlined twoToneColor="#52c41a"/>, label: 'หน้าแรก', color: "text-green-500" },
-  { icon: <FileDoneOutlined  />, label: 'เอกสาร', color: "text-purple-500" },
-  { icon: <CreditCardOutlined />, label: 'การเงิน', color: "text-orange-500" },
-  { icon: <ScheduleOutlined />, label: 'นัดหมาย', color: "text-blue-500" },
-  { icon: <OrderedListOutlined />, label: 'วางแผน', color: "text-yellow-500" },
-]
 
-export function MobileBottomNav() {
-  return (
-    <nav className="sabai-mobile-bottom-nav" aria-label="เมนูหลักบนมือถือ">
-      {navItems.map((item, index) => (
-        <Button key={index} type="text" className="sabai-nav-button">
-          <Flex vertical align="center" className={item.color}>
-            <div>{item.icon}</div>
-            <div className="text-xs">{item.label}</div>
-          </Flex>
-        </Button>
-      ))}
-    </nav>
-  );
+class MobileBottomNavComponent extends Component<WithMainStoreProps> {
+  render() {
+    const { mainStore: { tabs } } = this.props;
+    console.log("MobileBottomNav tabs:", tabs); // Debug log to check tabs data
+    return (
+      <nav className="sabai-mobile-bottom-nav" aria-label="เมนูหลักบนมือถือ">
+        {tabs.map((item, index) => (
+          <Button key={index} type="text" className="sabai-nav-button">
+            <Flex vertical align="center" className={item.color}>
+              <div>{item.icon}</div>
+              <div className="text-xs">{item.label}</div>
+            </Flex>
+          </Button>
+        ))}
+      </nav>
+    );
+  }
 }
+
+const MobileBottomNav = withMainStore(MobileBottomNavComponent);
+export { MobileBottomNav };

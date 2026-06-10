@@ -5,3 +5,10 @@ apps/*/dist
 .env
 .env.*
 !.env.example
+# DECISIONS.md
+# ROADMAP.md
+# PROGRESS.md
+# AGENTS.md
+# MVP.md
+# TECHSTACK.md
+# UI_GUIDE.md

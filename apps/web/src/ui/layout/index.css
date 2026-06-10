@@ -1,0 +1,31 @@
+.sabai-aurora-content {
+  text-align: center;
+}
+
+.sabai-aurora-title {
+  font-weight: 800;
+  margin: 0;
+  line-height: 30px;
+  padding-inline: 0.5em;
+  border-radius: 6px;
+  display: inline-block; /* ✅ สำคัญมาก background-clip ต้องการ */
+
+  background: linear-gradient(
+    90deg,
+    #00c2ff,
+    #33ff8c,
+    #d9ab41,
+    #e54cff,
+    #00c2ff   /* ✅ วนกลับสีแรกให้ loop ไม่กระตุก */
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* ✅ ใช้ color แทน -webkit-text-fill-color */
+  animation: sabai-aurora-text 12s linear infinite;
+}
+
+@keyframes sabai-aurora-text {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
