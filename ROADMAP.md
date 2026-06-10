@@ -70,6 +70,7 @@ Status: In progress.
 - [x] Normalize the `ดูภาพรวม` CTA to use the base AntD button variant for stable production styling.
 
 - [x] Strengthen the feature CTA glass treatment for production rendering.
+- [x] Refine the feature CTA into a frosted glass pill based on the reference style.
 
 ## Phase 3: Backend Foundation
 

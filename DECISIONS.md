@@ -197,3 +197,18 @@ Reason:
 Impact:
 
 - Future CTA glass refinements should prefer production-safe background, shadow, and border layers over mask-composite effects.
+
+### 2026-06-11: FeatureCard CTA uses a frosted raised pill style
+
+Decision:
+
+- Style the `เธ”เธนเธ เธฒเธเธฃเธงเธก` CTA as a cool frosted glass pill while keeping AntD `Button` as the underlying component.
+
+Reason:
+
+- The desired reference is a raised gray-blue glass pill, not the warmer amber glass treatment used previously.
+
+Impact:
+
+- Avoid `all: unset` and keep AntD button behavior.
+- Keep amber tint out of this CTA and use subtle gray-blue translucency, bevel, and lower shadow instead.

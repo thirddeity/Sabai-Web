@@ -72,6 +72,7 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
 - Normalized the `ดูภาพรวม` CTA to use the base AntD button variant so local and production styling stay consistent.
 
 - Strengthened the feature CTA glass treatment with production-safe gradient, highlight, and shadow layers.
+- Refined the feature CTA into a cooler frosted glass pill while keeping AntD `Button` as the base.
 
 ## Current Task
 
