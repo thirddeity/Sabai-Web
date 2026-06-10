@@ -29,7 +29,7 @@ Do not use a left sidebar or admin-dashboard layout.
   - เอกสารสำคัญ
   - การเงิน
   - นัดหมายและเตือน
-  - งานที่ต้องทำ
+  - วางแผน
 - Show today summary cards:
   - นัดวันนี้
   - งานค้าง

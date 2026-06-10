@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "sabai-web",
+      "dependencies": {
+        "@ant-design/icons": "6.x",
+      },
       "devDependencies": {
         "@eslint/js": "^9.0.0",
         "@types/bun": "^1.0.0",

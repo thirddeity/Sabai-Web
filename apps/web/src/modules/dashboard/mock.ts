@@ -41,7 +41,7 @@ export const dashboardFeatures: FeatureCardMock[] = [
     cue: 'นัด',
   },
   {
-    title: 'งานที่ต้องทำ',
+    title: 'วางแผน',
     subtitle: 'ติดตามงานค้างและสิ่งที่ควรจัดการต่อ',
     metric: '5 งาน',
     tone: 'lilac',

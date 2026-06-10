@@ -51,7 +51,7 @@ export class DashboardPage extends Component {
           </Row>
         </GlassCard>
 
-        <div className="sabai-priority-strip" aria-label="สิ่งที่ควรดูวันนี้">
+        <div className="sabai-priority-strip shadow-lg" aria-label="สิ่งที่ควรดูวันนี้">
           <Typography.Text className="sabai-priority-title">
             สิ่งที่ควรดูวันนี้
           </Typography.Text>
