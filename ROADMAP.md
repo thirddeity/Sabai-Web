@@ -67,6 +67,8 @@ Status: In progress.
 - [x] Refine Thai primary labels and add a dashboard life visual anchor.
 - [x] Clarify responsive layout policy in `AGENTS.md` so layout shell decisions must use `withBreakpoint`.
 
+- [x] Normalize the `ดูภาพรวม` CTA to use the base AntD button variant for stable production styling.
+
 ## Phase 3: Backend Foundation
 
 - [x] Add Hono app entry.

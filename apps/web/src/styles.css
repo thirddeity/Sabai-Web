@@ -462,26 +462,28 @@ body {
     filter 220ms ease;
 }
 
-.sabai-feature-action.ant-btn {
+.sabai-feature-action.ant-btn,
+.sabai-feature-action.ant-btn-default,
+.sabai-feature-action.ant-btn-text {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  width: fit-content;
-  min-width: 0;
-  height: auto;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 18px;
+  width: fit-content !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 18px !important;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(239, 252, 242, 0.7)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(226, 246, 232, 0.34));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(226, 246, 232, 0.34)) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.92),
     0 14px 30px rgba(52, 116, 90, 0.12),
-    0 5px 14px rgba(217, 155, 74, 0.08);
-  color: #314238;
-  backdrop-filter: blur(18px) saturate(1.08);
-  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+    0 5px 14px rgba(217, 155, 74, 0.08) !important;
+  color: #314238 !important;
+  backdrop-filter: blur(18px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.08) !important;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -554,56 +556,78 @@ body {
   filter: blur(14px);
 }
 
-.sabai-feature-action.ant-btn:hover {
+.sabai-feature-action.ant-btn:hover,
+.sabai-feature-action.ant-btn-default:hover,
+.sabai-feature-action.ant-btn-text:hover {
   transform: translateY(-1px) scale(0.985);
-  border-color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88) !important;
   color: #314238 !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.96),
     0 16px 32px rgba(52, 116, 90, 0.15),
-    0 6px 16px rgba(217, 155, 74, 0.1);
+    0 6px 16px rgba(217, 155, 74, 0.1) !important;
   filter: saturate(1.02);
 }
 
-.sabai-feature-action.ant-btn:hover::after {
+.sabai-feature-action.ant-btn:hover::after,
+.sabai-feature-action.ant-btn-default:hover::after,
+.sabai-feature-action.ant-btn-text:hover::after {
   --angle-1: -125deg;
 }
 
-.sabai-feature-action.ant-btn:hover > span {
+.sabai-feature-action.ant-btn:hover > span,
+.sabai-feature-action.ant-btn-default:hover > span,
+.sabai-feature-action.ant-btn-text:hover > span {
   color: inherit;
   text-shadow: none;
 }
 
-.sabai-feature-action.ant-btn:active {
+.sabai-feature-action.ant-btn:active,
+.sabai-feature-action.ant-btn-default:active,
+.sabai-feature-action.ant-btn-text:active {
   transform: translateY(1px) scale(0.98);
   color: #314238 !important;
 }
 
-.sabai-feature-action.ant-btn:active::after {
+.sabai-feature-action.ant-btn:active::after,
+.sabai-feature-action.ant-btn-default:active::after,
+.sabai-feature-action.ant-btn-text:active::after {
   --angle-1: -75deg;
 }
 
-.sabai-feature-action.ant-btn:focus-visible {
+.sabai-feature-action.ant-btn:focus-visible,
+.sabai-feature-action.ant-btn-default:focus-visible,
+.sabai-feature-action.ant-btn-text:focus-visible {
   outline: none;
   color: #314238 !important;
   box-shadow:
     0 0 0 3px rgba(217, 155, 74, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    0 16px 32px rgba(52, 116, 90, 0.14);
+    0 16px 32px rgba(52, 116, 90, 0.14) !important;
 }
 
-.sabai-feature-action.ant-btn:focus-visible::after {
+.sabai-feature-action.ant-btn:focus-visible::after,
+.sabai-feature-action.ant-btn-default:focus-visible::after,
+.sabai-feature-action.ant-btn-text:focus-visible::after {
   opacity: 1;
 }
 
 .sabai-feature-action.ant-btn:disabled,
-.sabai-feature-action.ant-btn[disabled] {
+.sabai-feature-action.ant-btn-default:disabled,
+.sabai-feature-action.ant-btn-text:disabled,
+.sabai-feature-action.ant-btn[disabled],
+.sabai-feature-action.ant-btn-default[disabled],
+.sabai-feature-action.ant-btn-text[disabled] {
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .sabai-feature-action.ant-btn:disabled:hover,
-.sabai-feature-action.ant-btn[disabled]:hover {
+.sabai-feature-action.ant-btn-default:disabled:hover,
+.sabai-feature-action.ant-btn-text:disabled:hover,
+.sabai-feature-action.ant-btn[disabled]:hover,
+.sabai-feature-action.ant-btn-default[disabled]:hover,
+.sabai-feature-action.ant-btn-text[disabled]:hover {
   transform: none;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.92),

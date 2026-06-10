@@ -69,6 +69,7 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
   - `MainLayout` now renders `MobileBottomNav` below AntD `md`.
   - Removed structural nav show/hide CSS and the mobile nav debug log.
 - Refined `withMainStore` typing and wrapper metadata so TypeScript and IDE navigation have clearer component information.
+- Normalized the `ดูภาพรวม` CTA to use the base AntD button variant so local and production styling stay consistent.
 
 ## Current Task
 

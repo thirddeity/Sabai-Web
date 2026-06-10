@@ -168,3 +168,18 @@ Impact:
 
 - CSS may still adjust spacing and visual details at small widths.
 - CSS must not decide whether top or bottom navigation exists.
+
+### 2026-06-11: Use the base AntD button variant for the FeatureCard CTA
+
+Decision:
+
+- Render the `ดูภาพรวม` CTA with the base AntD `Button` variant instead of `primary`.
+
+Reason:
+
+- The `primary` variant can pick up theme/runtime styling differences between local dev and production builds.
+
+Impact:
+
+- `FeatureCard` CTA styling should come from the local decorative CSS shell rather than AntD primary color behavior.
+- Keep state styling explicit for hover, active, focus-visible, and disabled states.

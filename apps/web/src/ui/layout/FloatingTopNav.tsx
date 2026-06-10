@@ -5,7 +5,8 @@ import { Component } from 'react';
 import type { WithMainStoreProps } from '@/hoc/withMainStore';
 import { withMainStore } from '@/hoc/withMainStore';
 import './index.css';
-import { BreakpointProps, withBreakpoint } from '@/hoc/withBreakpoint';
+import { withBreakpoint } from '@/hoc/withBreakpoint';
+import type { BreakpointProps } from '@/hoc/withBreakpoint';
 
 class FloatingTopNavComponent extends Component<WithMainStoreProps & BreakpointProps> {
   render() {
