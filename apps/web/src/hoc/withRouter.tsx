@@ -1,7 +1,7 @@
-import type { ComponentType } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router';
+import type { ComponentType } from "react";
+import { useLocation, useNavigate, useParams } from "react-router";
 
-export interface RouterProps {
+export interface WithRouterProps {
   router: {
     location: ReturnType<typeof useLocation>;
     navigate: ReturnType<typeof useNavigate>;
@@ -9,10 +9,10 @@ export interface RouterProps {
   };
 }
 
-export function withRouter<TProps extends RouterProps>(
+export function withRouter<TProps extends WithRouterProps>(
   WrappedComponent: ComponentType<TProps>,
 ) {
-  return function WithRouter(props: Omit<TProps, keyof RouterProps>) {
+  return function WithRouter(props: Omit<TProps, keyof WithRouterProps>) {
     const location = useLocation();
     const navigate = useNavigate();
     const params = useParams();

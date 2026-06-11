@@ -1,16 +1,16 @@
-import { Button, Col, Flex, Input, Row, Typography } from 'antd';
-import { Component } from 'react';
+import { Button, Col, Flex, Input, Row, Typography } from "antd";
+import { Component } from "react";
 
-import sabaiLifeVisual from '@/assets/sabai-life-visual.svg';
-import { EmptyState } from '@/ui/components/EmptyState';
-import { FeatureCard } from '@/ui/components/FeatureCard';
-import { StatCard } from '@/ui/components/StatCard';
-import { GlassCard } from '@/ui/effects/GlassCard';
+import sabaiLifeVisual from "@/assets/sabai-life-visual.svg";
+import { EmptyState } from "@/ui/components/EmptyState";
+import { FeatureCard } from "@/ui/components/FeatureCard";
+import { StatCard } from "@/ui/components/StatCard";
+import { GlassCard } from "@/ui/effects/GlassCard";
 import {
   dashboardFeatures,
   priorityItems,
   todaySummaries,
-} from '@/modules/dashboard/mock';
+} from "@/modules/dashboard/mock";
 
 export class DashboardPage extends Component {
   render() {
@@ -51,16 +51,23 @@ export class DashboardPage extends Component {
           </Row>
         </GlassCard>
 
-        <div className="sabai-priority-strip shadow-lg" aria-label="สิ่งที่ควรดูวันนี้">
+        <div
+          className="sabai-priority-strip shadow-lg"
+          aria-label="สิ่งที่ควรดูวันนี้"
+        >
           <Typography.Text className="sabai-priority-title">
             สิ่งที่ควรดูวันนี้
           </Typography.Text>
           <Row gutter={[12, 12]}>
             {priorityItems.map((item) => (
               <Col key={item.label} xs={24} md={8}>
-                <div className={`sabai-priority-item sabai-priority-item-${item.tone}`}>
+                <div
+                  className={`sabai-priority-item sabai-priority-item-${item.tone}`}
+                >
                   <Typography.Text strong>{item.label}</Typography.Text>
-                  <Typography.Text type="secondary">{item.detail}</Typography.Text>
+                  <Typography.Text type="secondary">
+                    {item.detail}
+                  </Typography.Text>
                 </div>
               </Col>
             ))}
@@ -68,14 +75,18 @@ export class DashboardPage extends Component {
         </div>
 
         <section>
-          <Flex align="center" justify="space-between" className="sabai-section-head">
+          <Flex
+            align="center"
+            justify="space-between"
+            className="sabai-section-head"
+          >
             <div>
               <Typography.Title level={2}>เรื่องสำคัญของฉัน</Typography.Title>
               <Typography.Text type="secondary">
                 เลือกดูหมวดหลักที่ช่วยจัดการชีวิตประจำวัน
               </Typography.Text>
             </div>
-            <Button type="primary" size="large" className="sabai-soft-button">
+            <Button type="primary" size="large">
               เพิ่มรายการ
             </Button>
           </Flex>

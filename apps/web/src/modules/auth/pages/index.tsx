@@ -1,10 +1,18 @@
-import { Button, Flex, Form, Input, Typography } from 'antd';
-import { Component } from 'react';
-import { Link } from 'react-router';
+import { Button, Flex, Form, Input, Typography } from "antd";
+import { Component } from "react";
 
-import { GlassCard } from '@/ui/effects/GlassCard';
+import type { WithRouterProps } from "@/hoc/withRouter";
+import { withRouter } from "@/hoc/withRouter";
+import { signInDemo } from "@/modules/auth/session";
+import { GlassCard } from "@/ui/effects/GlassCard";
+import { GlassButton } from "@/ui/effects/GlassButton";
 
-export class LoginPage extends Component {
+class LoginPageComponent extends Component<WithRouterProps> {
+  handleDemoLogin = () => {
+    signInDemo();
+    this.props.router.navigate("/dashboard");
+  };
+
   render() {
     return (
       <GlassCard
@@ -14,9 +22,7 @@ export class LoginPage extends Component {
       >
         <Flex vertical gap="middle">
           <div>
-            <Typography.Text className="sabai-kicker">
-              Sabai
-            </Typography.Text>
+            <Typography.Text className="sabai-kicker">Sabai</Typography.Text>
             <Typography.Title level={2} className="!mb-2">
               กลับเข้าสู่พื้นที่จัดการชีวิตของคุณ
             </Typography.Title>
@@ -33,14 +39,27 @@ export class LoginPage extends Component {
           <Form.Item label="รหัสผ่าน">
             <Input.Password placeholder="ยังไม่ได้เปิดใช้งาน" />
           </Form.Item>
-          <Button type="primary" size="large" block className="sabai-soft-button">
+          <Button
+            type="primary"
+            size="large"
+            block
+            className="sabai-soft-button"
+          >
             ยังไม่ได้เชื่อมต่อการเข้าสู่ระบบ
           </Button>
         </Form>
         <div className="mt-4 text-center">
-          <Link to="/dashboard">ไปหน้าตัวอย่าง Dashboard</Link>
+          <GlassButton
+            type="link"
+            className="w-full!"
+            onClick={this.handleDemoLogin}
+          >
+            ไปหน้าตัวอย่าง Dashboard
+          </GlassButton>
         </div>
       </GlassCard>
     );
   }
 }
+
+export const LoginPage = withRouter(LoginPageComponent);

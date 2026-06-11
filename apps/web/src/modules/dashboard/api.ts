@@ -1,6 +1,3 @@
-import { hc } from 'hono/client';
+import { apiClient } from '@/utils/api';
 
-import { webConfig } from '@/config';
-import type { AppType } from '@sabai/api';
-
-export const apiClient = hc<AppType>(webConfig.apiBaseUrl);
+export const dashboardApi = apiClient;

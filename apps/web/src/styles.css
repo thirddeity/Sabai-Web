@@ -445,10 +445,10 @@ body {
   isolation: isolate;
 }
 
-.sabai-feature-action.ant-btn,
-.sabai-feature-action.ant-btn-default,
-.sabai-feature-action.ant-btn-text {
-  --sabai-feature-action-border-width: clamp(1px, 0.0625em, 2px);
+.sabai-glass-button.ant-btn,
+.sabai-glass-button.ant-btn-default,
+.sabai-glass-button.ant-btn-text {
+  --sabai-glass-button-border-width: clamp(1px, 0.0625em, 2px);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -479,7 +479,7 @@ body {
     background 180ms ease;
 }
 
-.sabai-feature-action.ant-btn::before {
+.sabai-glass-button.ant-btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -495,13 +495,13 @@ body {
     opacity 180ms ease;
 }
 
-.sabai-feature-action.ant-btn::after {
+.sabai-glass-button.ant-btn::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  padding: var(--sabai-feature-action-border-width);
+  padding: var(--sabai-glass-button-border-width);
   background:
     conic-gradient(
       from var(--angle-1) at 50% 50%,
@@ -512,7 +512,7 @@ body {
       rgba(22, 31, 44, 0.42)
     ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.3));
-  box-shadow: inset 0 0 0 calc(var(--sabai-feature-action-border-width) / 2) rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 0 0 calc(var(--sabai-glass-button-border-width) / 2) rgba(255, 255, 255, 0.62);
   -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
   mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
   -webkit-mask-clip: content-box, border-box;
@@ -526,9 +526,9 @@ body {
 }
 
 @supports not (background: conic-gradient(from 0deg, red, blue)) {
-  .sabai-feature-action.ant-btn::after,
-  .sabai-feature-action.ant-btn-default::after,
-  .sabai-feature-action.ant-btn-text::after {
+  .sabai-glass-button.ant-btn::after,
+  .sabai-glass-button.ant-btn-default::after,
+  .sabai-glass-button.ant-btn-text::after {
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.5);
     background:
@@ -539,9 +539,9 @@ body {
 }
 
 @supports not ((mask-composite: exclude) or (-webkit-mask-composite: destination-out)) {
-  .sabai-feature-action.ant-btn::after,
-  .sabai-feature-action.ant-btn-default::after,
-  .sabai-feature-action.ant-btn-text::after {
+  .sabai-glass-button.ant-btn::after,
+  .sabai-glass-button.ant-btn-default::after,
+  .sabai-glass-button.ant-btn-text::after {
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.5);
     background:
@@ -551,7 +551,7 @@ body {
   }
 }
 
-.sabai-feature-action.ant-btn > span {
+.sabai-glass-button.ant-btn > span {
   position: relative;
   z-index: 1;
   display: block;
@@ -564,9 +564,9 @@ body {
   text-shadow: 0 3px 1px rgba(18, 28, 40, 0.1);
 }
 
-.sabai-feature-action.ant-btn:hover,
-.sabai-feature-action.ant-btn-default:hover,
-.sabai-feature-action.ant-btn-text:hover {
+.sabai-glass-button.ant-btn:hover,
+.sabai-glass-button.ant-btn-default:hover,
+.sabai-glass-button.ant-btn-text:hover {
   transform: translateY(-1px) scale(0.985);
   background-color: rgba(218, 226, 236, 0.34) !important;
   color: #1f2633 !important;
@@ -581,44 +581,44 @@ body {
   filter: none;
 }
 
-.sabai-feature-action.ant-btn:hover::before,
-.sabai-feature-action.ant-btn-default:hover::before,
-.sabai-feature-action.ant-btn-text:hover::before {
+.sabai-glass-button.ant-btn:hover::before,
+.sabai-glass-button.ant-btn-default:hover::before,
+.sabai-glass-button.ant-btn-text:hover::before {
   background-position: 25% 50%;
   opacity: 0.74;
 }
 
-.sabai-feature-action.ant-btn:hover::after,
-.sabai-feature-action.ant-btn-default:hover::after,
-.sabai-feature-action.ant-btn-text:hover::after {
+.sabai-glass-button.ant-btn:hover::after,
+.sabai-glass-button.ant-btn-default:hover::after,
+.sabai-glass-button.ant-btn-text:hover::after {
   --angle-1: -125deg;
   opacity: 0.96;
 }
 
-.sabai-feature-action.ant-btn:hover > span,
-.sabai-feature-action.ant-btn-default:hover > span,
-.sabai-feature-action.ant-btn-text:hover > span {
+.sabai-glass-button.ant-btn:hover > span,
+.sabai-glass-button.ant-btn-default:hover > span,
+.sabai-glass-button.ant-btn-text:hover > span {
   color: inherit;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62);
 }
 
-.sabai-feature-action.ant-btn:active,
-.sabai-feature-action.ant-btn-default:active,
-.sabai-feature-action.ant-btn-text:active {
+.sabai-glass-button.ant-btn:active,
+.sabai-glass-button.ant-btn-default:active,
+.sabai-glass-button.ant-btn-text:active {
   transform: translateY(1px) scale(0.98);
   color: #1f2633 !important;
 }
 
-.sabai-feature-action.ant-btn:active::after,
-.sabai-feature-action.ant-btn-default:active::after,
-.sabai-feature-action.ant-btn-text:active::after {
+.sabai-glass-button.ant-btn:active::after,
+.sabai-glass-button.ant-btn-default:active::after,
+.sabai-glass-button.ant-btn-text:active::after {
   --angle-1: -75deg;
   opacity: 0.9;
 }
 
-.sabai-feature-action.ant-btn:focus-visible,
-.sabai-feature-action.ant-btn-default:focus-visible,
-.sabai-feature-action.ant-btn-text:focus-visible {
+.sabai-glass-button.ant-btn:focus-visible,
+.sabai-glass-button.ant-btn-default:focus-visible,
+.sabai-glass-button.ant-btn-text:focus-visible {
   outline: none;
   color: #1f2633 !important;
   box-shadow:
@@ -628,28 +628,28 @@ body {
     0 4px 2px -2px rgba(18, 28, 40, 0.22) !important;
 }
 
-.sabai-feature-action.ant-btn:focus-visible::after,
-.sabai-feature-action.ant-btn-default:focus-visible::after,
-.sabai-feature-action.ant-btn-text:focus-visible::after {
+.sabai-glass-button.ant-btn:focus-visible::after,
+.sabai-glass-button.ant-btn-default:focus-visible::after,
+.sabai-glass-button.ant-btn-text:focus-visible::after {
   opacity: 1;
 }
 
-.sabai-feature-action.ant-btn:disabled,
-.sabai-feature-action.ant-btn-default:disabled,
-.sabai-feature-action.ant-btn-text:disabled,
-.sabai-feature-action.ant-btn[disabled],
-.sabai-feature-action.ant-btn-default[disabled],
-.sabai-feature-action.ant-btn-text[disabled] {
+.sabai-glass-button.ant-btn:disabled,
+.sabai-glass-button.ant-btn-default:disabled,
+.sabai-glass-button.ant-btn-text:disabled,
+.sabai-glass-button.ant-btn[disabled],
+.sabai-glass-button.ant-btn-default[disabled],
+.sabai-glass-button.ant-btn-text[disabled] {
   cursor: not-allowed;
   opacity: 0.7;
 }
 
-.sabai-feature-action.ant-btn:disabled:hover,
-.sabai-feature-action.ant-btn-default:disabled:hover,
-.sabai-feature-action.ant-btn-text:disabled:hover,
-.sabai-feature-action.ant-btn[disabled]:hover,
-.sabai-feature-action.ant-btn-default[disabled]:hover,
-.sabai-feature-action.ant-btn-text[disabled]:hover {
+.sabai-glass-button.ant-btn:disabled:hover,
+.sabai-glass-button.ant-btn-default:disabled:hover,
+.sabai-glass-button.ant-btn-text:disabled:hover,
+.sabai-glass-button.ant-btn[disabled]:hover,
+.sabai-glass-button.ant-btn-default[disabled]:hover,
+.sabai-glass-button.ant-btn-text[disabled]:hover {
   transform: none;
   box-shadow:
     inset 0 2px 2px rgba(18, 28, 40, 0.05),

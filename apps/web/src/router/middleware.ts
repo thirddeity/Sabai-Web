@@ -1,17 +1,16 @@
 import { redirect } from 'react-router';
-
-const isAuthConfigured = false;
+import { isAuthenticated } from '@/modules/auth/session';
 
 export function protectedLoader() {
-  if (!isAuthConfigured) {
-    return null;
+  if (!isAuthenticated()) {
+    return redirect('/login');
   }
 
   return null;
 }
 
 export function loginLoader() {
-  if (isAuthConfigured) {
+  if (isAuthenticated()) {
     return redirect('/dashboard');
   }
 
