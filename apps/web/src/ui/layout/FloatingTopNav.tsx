@@ -27,7 +27,7 @@ class FloatingTopNavComponent extends Component<
     const isLg = !!screens.lg;
     return (
       <header className="sabai-floating-top-nav px-4">
-        <Flex align="center" justify={isLg ? "space-between" : "center"}>
+        <Flex align="center" justify={"space-between"}>
           <Link to="/dashboard" className="sabai-brand-link">
             <Flex align="center">
               <img src={logo} alt="sabai-logo" className="h-12 md:h-16.5" />
@@ -57,16 +57,17 @@ class FloatingTopNavComponent extends Component<
                   </Button>
                 ))}
               </Flex>
-              <Button
-                variant="outlined"
-                color="red"
-                onClick={this.handleSignOut}
-              >
-                <LoginOutlined />
-                <span>ออกจากระบบ</span>
-              </Button>
             </>
           )}
+          <Button
+            variant="solid"
+            color="red"
+            size={isLg ? "middle" : "small"}
+            onClick={this.handleSignOut}
+          >
+            <LoginOutlined />
+            {isLg && (<span>ออกจากระบบ</span>)}
+          </Button>
         </Flex>
       </header>
     );
