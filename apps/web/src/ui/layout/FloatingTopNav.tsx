@@ -10,6 +10,7 @@ import type { BreakpointProps } from "@/hoc/withBreakpoint";
 import { signOutDemo } from "@/modules/auth/session";
 import { withRouter, type WithRouterProps } from "@/hoc/withRouter";
 import { LoginOutlined } from "@ant-design/icons";
+import { GlassButton } from "../effects/GlassButton";
 
 class FloatingTopNavComponent extends Component<
   WithMainStoreProps & BreakpointProps & WithRouterProps
@@ -59,15 +60,20 @@ class FloatingTopNavComponent extends Component<
               </Flex>
             </>
           )}
-          <Button
+          <GlassButton
             variant="solid"
             color="red"
             size={isLg ? "middle" : "small"}
+            className="bg-red-500! h-11!"
             onClick={this.handleSignOut}
           >
-            <LoginOutlined />
-            {isLg && (<span>ออกจากระบบ</span>)}
-          </Button>
+            <>
+              <Flex gap={8} align="center" className="text-red-50">
+                <LoginOutlined />
+                {isLg && (<span>ออกจากระบบ</span>)}
+              </Flex>
+            </>
+          </GlassButton>
         </Flex>
       </header>
     );
