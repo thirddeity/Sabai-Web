@@ -4,13 +4,14 @@ import { Component } from "react";
 import type { WithRouterProps } from "@/hoc/withRouter";
 import { withRouter } from "@/hoc/withRouter";
 import { signInDemo } from "@/modules/auth/session";
+import { AppPath } from "@/router/paths";
 import { GlassCard } from "@/ui/effects/GlassCard";
 import { GlassButton } from "@/ui/effects/GlassButton";
 
 class LoginPageComponent extends Component<WithRouterProps> {
   handleDemoLogin = () => {
     signInDemo();
-    this.props.router.navigate("/dashboard");
+    this.props.router.navigate(AppPath.home);
   };
 
   render() {
@@ -54,7 +55,7 @@ class LoginPageComponent extends Component<WithRouterProps> {
             className="w-full!"
             onClick={this.handleDemoLogin}
           >
-            ไปหน้าตัวอย่าง Dashboard
+            ไปหน้าหลักตัวอย่าง
           </GlassButton>
         </div>
       </GlassCard>

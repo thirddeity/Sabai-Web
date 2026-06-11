@@ -22,7 +22,7 @@ class MainLayoutComponent extends Component<BreakpointProps> {
               <Outlet />
             </PageContainer>
           </Layout.Content>
-          {!screens.lg && (<MobileBottomNav />)}
+          {!screens.md && (<MobileBottomNav />)}
         </Layout>
       </GradientBackground>
     );

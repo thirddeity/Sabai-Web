@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Phase 2.6: Frontend UI Prototype.
+Phase 4: MVP Modules.
 
 Status: In progress.
 
@@ -57,6 +57,8 @@ Status: In progress.
 - [x] Add shared StatCard.
 - [x] Add shared FeatureCard.
 - [x] Add responsive app navigation.
+- [x] Bind top and bottom navigation to real app routes with active state.
+- [x] Fix Thai text regression in Home and placeholder module pages after route rename.
 - [x] Move responsive navigation shell visibility to `withBreakpoint`.
 - [x] Add subtle motion and hover effects.
 - [x] Apply Thai-first global typography with LINE Seed Sans TH.
@@ -72,6 +74,8 @@ Status: In progress.
 - [x] Strengthen the feature CTA glass treatment for production rendering.
 - [x] Refine the feature CTA into a frosted glass pill based on the reference style.
 - [x] Add browser compatibility fallbacks for the feature CTA mask and conic-gradient border.
+- [x] Convert the dense dashboard mock into a lighter `/home` feature hub.
+- [x] Rename the frontend `dashboard` module to `home` while keeping `/dashboard` as a temporary redirect.
 
 ## Phase 3: Backend Foundation
 
@@ -84,8 +88,9 @@ Status: In progress.
 
 ## Phase 4: MVP Modules
 
-- [ ] Dashboard shell.
-- [ ] Task Management.
+- [x] Home shell.
+- [x] Task Management frontend mock: `งานที่ต้องทำ` with CRUD + UX before backend.
+- [ ] Task Management backend schema and API.
 - [ ] Schedule & Reminder.
 - [ ] Finance Tracker.
 - [ ] Digital Vault metadata.

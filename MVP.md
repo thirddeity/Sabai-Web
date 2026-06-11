@@ -32,14 +32,15 @@ The MVP must be useful before it is complete or advanced.
 - Add important dates.
 - Set simple date and time reminders.
 
-### 4. Task Management
+### 4. Task Management / งานที่ต้องทำ
 
-- Create todo items.
-- Mark tasks as done.
+- Create tasks that Thai users understand as `งานที่ต้องทำ`.
+- Add, edit, delete, and mark tasks as done.
 - Set simple priority.
+- Filter pending, important, completed, and all tasks.
 - Show pending tasks clearly.
 
-### 5. Dashboard
+### 5. Home
 
 - Show only important, easy-to-understand information.
 - Include today's appointments.
@@ -76,4 +77,3 @@ The MVP must be useful before it is complete or advanced.
 - The UI is readable on mobile and desktop.
 - Backend code is clear for a beginner to follow.
 - TypeScript, lint, and build checks pass once app code exists.
-

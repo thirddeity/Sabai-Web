@@ -2,6 +2,25 @@
 
 ## Decision Log
 
+### 2026-06-11: Use `home` as the frontend home module name
+
+Decision:
+
+- Rename the frontend `dashboard` module folder to `home`.
+- Use `/home` as the primary app home route.
+- Keep `/dashboard` as a temporary redirect to `/home`.
+
+Reason:
+
+- The current page is a lightweight personal home hub, not an enterprise-style dashboard.
+- Keeping the old route as a redirect avoids breaking existing links during the rename.
+
+Impact:
+
+- Frontend imports should use `@/modules/home/...`.
+- Primary navigation should point to `AppPath.home`.
+- Remove the `/dashboard` redirect only after old links no longer matter.
+
 ### 2026-06-10: Create project control documents before app code
 
 Decision:
@@ -132,7 +151,7 @@ Reason:
 Impact:
 
 - Keep `Sabai` as the brand name, but avoid primary labels such as `Life Hub`, `Modules`, `Today Summary`, `Hub`, and `More`.
-- Dashboard labels should use concrete Thai words such as `หน้าแรก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
+- Dashboard labels should use concrete Thai words such as `หน้าหลัก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
 - Placeholder copy should clearly say when data is mocked or when auth/backend is not connected.
 
 ### 2026-06-11: Responsive layout decisions must use `withBreakpoint`
@@ -279,3 +298,39 @@ Impact:
 - Contributors must install dependencies with `bun install` on each machine and must never copy `node_modules` across machines, because native binaries are tied to OS and CPU.
 - The project standardizes on Bun only; mixing npm, yarn, or pnpm is not allowed to avoid conflicting lockfiles.
 - Host `node` may still be the wrong architecture for direct `node` calls; installing an architecture-matched `node` is recommended but no longer required to run the app.
+
+### 2026-06-11: Start MVP modules with `งานที่ต้องทำ`
+
+Decision:
+
+- Make Task Management the first real MVP module page.
+- Use the visible Thai module name `งานที่ต้องทำ`.
+- Build the frontend to `CRUD + UX` quality before designing the backend schema and API.
+
+Reason:
+
+- Task Management can become useful without database, auth, storage, or external services.
+- A working frontend flow will reveal the minimum fields and actions needed for the backend.
+- The Thai label `งานที่ต้องทำ` is clearer for everyday users than `Task Management` or the broad label `วางแผน`.
+
+Impact:
+
+- `/tasks` should show a usable mock-only task page, not a placeholder.
+- The home feature card and navigation should use `งานที่ต้องทำ`.
+- Backend work for tasks should follow after the frontend flow is stable.
+
+### 2026-06-11: Module UI wording must describe user intent
+
+Decision:
+
+- Visible module wording must use clear Thai words that describe what the user can do on that screen.
+- Internal route and code names may stay English when useful, but visible labels should favor Thai.
+
+Reason:
+
+- Sabai is for Thai users of many ages, so module names and actions must be understandable without product or technical vocabulary.
+
+Impact:
+
+- Future modules must align wording across home cards, navigation, page titles, buttons, empty states, and documentation.
+- Broad labels should be replaced when a more concrete Thai action label exists.

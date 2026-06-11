@@ -2,8 +2,9 @@
 
 ## Current Status
 
-Phase 2.6 Frontend UI Prototype is in progress with the Sabai Life Console direction.
-Documentation maintenance is in progress to lock down responsive layout rules for `withBreakpoint`.
+Phase 4 MVP Modules is in progress.
+The app shell now uses `/home` as the primary home route, with the old `/dashboard` path redirecting to `/home` for compatibility.
+The first real module page is `งานที่ต้องทำ` at `/tasks`, implemented as a frontend mock with CRUD + UX before backend work.
 
 ## Completed
 
@@ -103,25 +104,60 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
   - Kept the `sabai-feature-action-shell` wrapper for left-aligning the button.
 - Added per-app convenience scripts `build:web` and `preview:web` for building and previewing only `apps/web` from the repo root.
 - Verified `bun run typecheck`, `bun run lint`, and `bun run build:web` all pass.
+- Converted the dense dashboard placeholder into a lighter Home feature hub:
+  - `/home` is now the primary post-login URL.
+  - `/` and the old `/dashboard` route redirect to `/home`.
+  - The visible page now shows `หน้าหลัก`, `เรื่องสำคัญของฉัน`, one helper line, and the four feature cards.
+  - Removed the dashboard hero, search pill, priority strip, add button, summary cards, empty state, and feature-card metrics.
+  - Changed the feature CTA from `ดูภาพรวม` to `เข้าไปดู`.
+  - Added simple placeholder destination pages for the four feature-card routes.
+
+- Started Phase 4 MVP Modules with the first real module page:
+  - Replaced `/tasks` placeholder with `งานที่ต้องทำ`.
+  - Added mock-only CRUD + UX for adding, editing, deleting, marking done, changing priority, and filtering tasks.
+  - Updated the Home feature card and navigation wording from `วางแผน` to `งานที่ต้องทำ`.
+  - Added Thai module wording rules so visible module labels describe what users do.
+- Bound the app navigation to real routes:
+  - Added route paths to `MainStore` menu items so top and bottom nav share one source of truth.
+  - Changed top nav and mobile bottom nav to React Router links.
+  - Added active state from the current location.
+  - Verified top nav and mobile bottom nav navigation for `/home`, `/vault`, `/finance`, `/reminders`, and `/tasks`.
+- Renamed the frontend module folder from `apps/web/src/modules/dashboard/` to `apps/web/src/modules/home/`.
+- Kept `/dashboard` as a temporary compatibility redirect to `/home`.
+- Fixed the Thai text regression from mojibake in Home and placeholder module pages:
+  - Restored Thai copy for `/home` feature cards.
+  - Restored Thai copy for `/vault`, `/finance`, and `/reminders` placeholder pages.
+  - Verified `/finance`, `/vault`, and `/home` in the in-app browser with no `เธ`, `เน€`, or `โ€` mojibake signatures in rendered text.
 
 ## Current Task
 
-Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
+Phase 4: Fix Thai text regression in Home and placeholder module pages.
 
 ## Files Created Or Updated In This Task
 
 - `ROADMAP.md`
 - `PROGRESS.md`
 - `DECISIONS.md`
+- `MVP.md`
 - `UI_GUIDE.md`
+- `apps/web/src/modules/tasks/api.ts`
+- `apps/web/src/modules/tasks/pages/index.tsx`
+- `apps/web/src/modules/tasks/styles/index.css`
+- `apps/web/src/modules/tasks/types/index.ts`
+- `apps/web/src/modules/tasks/components/.gitkeep`
 - `apps/web/src/main.tsx`
 - `apps/web/src/assets/sabai-life-visual.svg`
 - `apps/web/src/hoc/withMainStore.tsx`
 - `apps/web/src/modules/auth/pages/index.tsx`
-- `apps/web/src/modules/dashboard/pages/index.tsx`
-- `apps/web/src/modules/dashboard/mock.ts`
+- `apps/web/src/modules/home/api.ts`
+- `apps/web/src/modules/home/pages/index.tsx`
+- `apps/web/src/modules/home/mock.ts`
+- `apps/web/src/modules/home/types/index.ts`
+- `apps/web/src/modules/placeholder/pages/index.tsx`
+- `apps/web/src/router/paths.ts`
 - `apps/web/src/layouts/main.tsx`
 - `apps/web/src/store/MainStore.tsx`
+- `apps/web/src/types/main-store-types.ts`
 - `apps/web/src/ui/components/FeatureCard.tsx`
 - `apps/web/src/ui/layout/FloatingTopNav.tsx`
 - `apps/web/src/ui/layout/MobileBottomNav.tsx`
@@ -139,12 +175,18 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 - Digital Vault feature implementation.
 - Finance feature implementation.
 - Reminder feature implementation.
-- Task feature implementation.
+- Task backend implementation.
+- Task persistence.
 - Per-component font overrides.
 
 ## Next Recommended Task
 
-Finish the remaining Phase 2.6 visual states and responsive QA before starting Phase 3 backend foundation.
+Design and implement the Task Management backend foundation after the frontend flow is stable:
+
+- Drizzle schema for user-owned tasks.
+- Zod validation for create, update, filter, and delete inputs.
+- Hono routes split through `routes.ts`, `schema.ts`, `service.ts`, `repository.ts`, and `types.ts`.
+- Frontend `tasks/api.ts` using the shared Hono RPC client.
 
 Before starting that task, read:
 

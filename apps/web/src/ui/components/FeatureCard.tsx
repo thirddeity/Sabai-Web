@@ -6,7 +6,7 @@ import { MotionCard } from "@/ui/effects/MotionCard";
 export interface FeatureCardProps {
   title: string;
   subtitle: string;
-  metric: string;
+  path: string;
   cue: string;
   tone?: "emerald" | "amber" | "sky" | "lilac";
   motionDelayMs?: number;
@@ -14,8 +14,8 @@ export interface FeatureCardProps {
 
 export function FeatureCard({
   cue,
-  metric,
   motionDelayMs = 0,
+  path,
   subtitle,
   title,
   tone = "emerald",
@@ -42,9 +42,6 @@ export function FeatureCard({
             <Typography.Text className="sabai-feature-cue">
               {cue}
             </Typography.Text>
-            <Typography.Text className="sabai-feature-metric">
-              {metric}
-            </Typography.Text>
           </Flex>
           <Typography.Title level={3}>{title}</Typography.Title>
           <Typography.Paragraph type="secondary">
@@ -52,7 +49,7 @@ export function FeatureCard({
           </Typography.Paragraph>
         </div>
         <Flex align="center" justify="center">
-          <GlassButton className="w-full!">ดูภาพรวม</GlassButton>
+          <GlassButton href={path} className="w-full!">เข้าไปดู</GlassButton>
         </Flex>
       </Flex>
     </MotionCard>

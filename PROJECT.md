@@ -20,8 +20,8 @@ The first goal is to build a small, usable MVP for personal use before expanding
 1. Digital Vault
 2. Finance Tracker
 3. Schedule & Reminder
-4. Task Management
-5. Dashboard
+4. Task Management / งานที่ต้องทำ
+5. Home
 6. Simple Search
 7. Simple In-app Reminder
 
@@ -49,4 +49,3 @@ Do not add these to the MVP:
 - Read the project documents before every implementation task.
 - Update `PROGRESS.md` and `ROADMAP.md` before finishing a task.
 - Update `DECISIONS.md` when a new project decision is made.
-

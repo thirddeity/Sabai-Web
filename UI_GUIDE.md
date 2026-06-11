@@ -17,30 +17,27 @@ Do not use a left sidebar or admin-dashboard layout.
 
 ## Layout Direction
 
-- Use Bento Grid as the main dashboard layout.
+- Use a simple feature grid as the main Home layout.
 - Use Floating Top Navigation on desktop.
 - Use Bottom Pill Navigation on mobile.
-- The first screen after login is a Life Hub.
-- The Life Hub starts with a greeting hero: "วันนี้มีอะไรสำคัญบ้าง".
-- Include a large global search pill.
-- Include a soft life visual card in the hero so the dashboard feels warm and personal.
-- Include a short priority strip named "สิ่งที่ควรดูวันนี้".
+- The first screen after login is `หน้าหลัก` at `/home`.
+- Home should stay light: heading, one helper line, and the core feature cards.
+- Keep overview summaries, priority strips, and search out of Home until they have real data and a clear purpose.
 - Show 4 feature cards:
   - เอกสารสำคัญ
   - การเงิน
   - นัดหมายและเตือน
-  - วางแผน
-- Show today summary cards:
-  - นัดวันนี้
-  - งานค้าง
-  - บิลใกล้ตัด
-  - เอกสารใกล้หมดอายุ
+  - งานที่ต้องทำ
+- Feature cards should use `เข้าไปดู` as the primary action label.
 
 ## Thai Wording Rules
 
 - Use clear Thai labels for primary navigation and section headings.
 - Keep `Sabai` as the brand name, but avoid English labels for everyday actions.
-- Prefer concrete words such as `หน้าแรก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
+- Module names must describe what the user does, not only the product category.
+- Prefer `งานที่ต้องทำ` over `Task Management` or broad labels such as `วางแผน` when the screen is for todos.
+- Keep module wording consistent across the home card, navigation, route page title, buttons, empty states, and documentation.
+- Prefer concrete words such as `หน้าหลัก`, `ค้นหา`, `วันนี้`, `เมนู`, `เรื่องสำคัญของฉัน`, and `สรุปวันนี้`.
 - Avoid abstract template words such as `Life Hub`, `Modules`, `Today Summary`, `Hub`, and `More` in visible primary UI.
 - Placeholder text must clearly say when a screen uses mock data or is not connected to a real feature yet.
 

@@ -42,7 +42,7 @@ apps/web/src/
       types/
       pages/
         index.tsx
-    dashboard/
+    home/
       api.ts
       components/
       styles/
@@ -111,4 +111,3 @@ routes.ts
 - Do not add self-hosted deployment in the MVP.
 - Do not split into microservices.
 - Do not add infrastructure before the feature needs it.
-
