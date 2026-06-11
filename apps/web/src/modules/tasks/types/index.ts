@@ -1,13 +1,15 @@
 export type TaskPriority = "high" | "medium" | "low";
 
-export type TaskFilter = "all" | "pending" | "done" | "high";
+export type TaskStatus = "todo" | "waiting" | "done";
+
+export type TaskFilter = "all" | "todo" | "waiting" | "high" | "done";
 
 export interface TaskItem {
   id: string;
   title: string;
   note: string;
   priority: TaskPriority;
-  done: boolean;
+  status: TaskStatus;
   createdAt: string;
   updatedAt: string;
 }
@@ -16,4 +18,5 @@ export interface TaskDraft {
   title: string;
   note: string;
   priority: TaskPriority;
+  status: TaskStatus;
 }

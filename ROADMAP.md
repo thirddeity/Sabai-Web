@@ -90,6 +90,8 @@ Status: In progress.
 
 - [x] Home shell.
 - [x] Task Management frontend mock: `งานที่ต้องทำ` with CRUD + UX before backend.
+- [x] Improve task row status clarity with explicit `เสร็จแล้ว` / `ยังไม่เสร็จ` tags.
+- [x] Redesign Task Management as a compact manager with modal add/edit, real `ต้องทำ` / `รอได้` / `ทำเสร็จแล้ว` status, and local components.
 - [ ] Task Management backend schema and API.
 - [ ] Schedule & Reminder.
 - [ ] Finance Tracker.
@@ -102,6 +104,7 @@ Status: In progress.
 
 - [ ] Improve mobile usability.
 - [ ] Improve empty states and error messages.
+- [x] Clarify page composition rules in `AGENTS.md`.
 - [x] Add Vercel SPA rewrite plus app-level not-found fallback.
 - [ ] Review security rules for user-owned data.
 - [ ] Run typecheck, lint, and build.

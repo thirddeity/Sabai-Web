@@ -6,6 +6,7 @@ Phase 4 MVP Modules is in progress.
 The app shell now uses `/home` as the primary home route, with the old `/dashboard` path redirecting to `/home` for compatibility.
 The first real module page is `งานที่ต้องทำ` at `/tasks`, implemented as a frontend mock with CRUD + UX before backend work.
 The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page so deep links do not hit a raw platform `NOT_FOUND`.
+The repo rules now also spell out that feature pages should stay thin and split crowded JSX into smaller local components.
 
 ## Completed
 
@@ -118,6 +119,7 @@ The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page 
   - Added mock-only CRUD + UX for adding, editing, deleting, marking done, changing priority, and filtering tasks.
   - Updated the Home feature card and navigation wording from `วางแผน` to `งานที่ต้องทำ`.
   - Added Thai module wording rules so visible module labels describe what users do.
+- Clarified the page composition rule in `AGENTS.md` so feature pages should stay thin and use smaller module-local components when the JSX gets crowded.
 - Bound the app navigation to real routes:
   - Added route paths to `MainStore` menu items so top and bottom nav share one source of truth.
   - Changed top nav and mobile bottom nav to React Router links.
@@ -132,17 +134,21 @@ The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page 
 
 ## Current Task
 
-Phase 4: Fix Vercel SPA `NOT_FOUND` behavior for deep links.
+Phase 4: Redesign `งานที่ต้องทำ` into a compact task manager with modal add/edit and clear task status.
 
 ## Files Created Or Updated In This Task
 
 - `ROADMAP.md`
 - `PROGRESS.md`
 - `DECISIONS.md`
-- `vercel.json`
-- `apps/web/vercel.json`
-- `apps/web/src/router/index.tsx`
-- `apps/web/src/modules/placeholder/pages/not-found.tsx`
+- `apps/web/src/modules/tasks/components/TaskFilterBar.tsx`
+- `apps/web/src/modules/tasks/components/TaskFormModal.tsx`
+- `apps/web/src/modules/tasks/components/TaskItemRow.tsx`
+- `apps/web/src/modules/tasks/components/TaskSummaryCards.tsx`
+- `apps/web/src/modules/tasks/components/task-options.ts`
+- `apps/web/src/modules/tasks/pages/index.tsx`
+- `apps/web/src/modules/tasks/styles/index.css`
+- `apps/web/src/modules/tasks/types/index.ts`
 
 ## Out Of Scope For This Task
 
@@ -158,6 +164,15 @@ Phase 4: Fix Vercel SPA `NOT_FOUND` behavior for deep links.
 - Task persistence.
 - Per-component font overrides.
 - Vercel backend deployment.
+
+## Task Update
+
+- Redesigned the task frontend mock into a compact manager view.
+- Moved add/edit into one shared modal form.
+- Added real task status values: `todo`, `waiting`, and `done`.
+- Added a `รอได้` filter backed by task status, not inferred from priority.
+- Split the crowded task page into local presentational components.
+- Kept the task module mock-only; no backend, API, or database changes were added.
 
 ## Next Recommended Task
 

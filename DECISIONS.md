@@ -2,6 +2,25 @@
 
 ## Decision Log
 
+### 2026-06-11: Task status is separate from task priority
+
+Decision:
+
+- Use a dedicated `TaskStatus` value for task workflow state: `todo`, `waiting`, and `done`.
+- Keep `TaskPriority` as a separate value for importance: `high`, `medium`, and `low`.
+- Let the task list filter by `ต้องทำ`, `รอได้`, `สำคัญ`, `ทำเสร็จแล้ว`, and `ทั้งหมด`.
+
+Reason:
+
+- `รอได้` is a workflow state users expect to filter directly, not only a priority hint.
+- Separating status from priority keeps the task UI easier to understand and prepares the future backend schema for clearer data.
+
+Impact:
+
+- Task rows should render and update `status` directly.
+- The checkbox toggles between `done` and `todo`.
+- The `สำคัญ` filter should continue to mean high-priority unfinished work.
+
 ### 2026-06-11: Use `home` as the frontend home module name
 
 Decision:
@@ -219,6 +238,24 @@ Impact:
 
 ### 2026-06-11: FeatureCard CTA uses a frosted raised pill style
 
+### 2026-06-11: Task rows use explicit status tags instead of a confirm dialog
+
+Decision:
+
+- Show task completion state with visible Thai status tags such as `ยังไม่เสร็จ` and `เสร็จแล้ว`.
+- Keep the checkbox as the direct action for toggling task completion.
+- Do not add a confirm dialog for marking a task done or undoing it in the MVP UI.
+
+Reason:
+
+- The task list should stay quick to scan and quick to use.
+- A confirm step would slow down one of the most common actions in the module.
+
+Impact:
+
+- `renderTaskItem` should include a status tag alongside the priority tag.
+- Completed tasks can still use subtle muted styling, but the status must remain obvious at a glance.
+
 Decision:
 
 - Style the `เธ”เธนเธ เธฒเธเธฃเธงเธก` CTA as a cool frosted glass pill while keeping AntD `Button` as the underlying component.
@@ -334,6 +371,24 @@ Impact:
 
 - Future modules must align wording across home cards, navigation, page titles, buttons, empty states, and documentation.
 - Broad labels should be replaced when a more concrete Thai action label exists.
+
+### 2026-06-11: Feature pages should stay thin and compose local components
+
+Decision:
+
+- Keep feature pages as thin shells.
+- Split crowded, repetitive, or hard-to-scan JSX into smaller module-local components inside `components/`.
+- Prefer named subcomponents for repeated UI, distinct sections, and complex conditional blocks.
+
+Reason:
+
+- Large one-file pages become harder to review, maintain, and extend.
+- Smaller components keep the render flow readable and make future refactors safer.
+
+Impact:
+
+- Page files should focus on orchestration, not every piece of markup.
+- When a page starts to feel cramped, extract local components before the file turns into a monolith.
 
 ### 2026-06-11: Vercel SPA deploys need a rewrite to `index.html`
 

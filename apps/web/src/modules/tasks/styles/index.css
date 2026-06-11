@@ -10,54 +10,122 @@
   justify-content: space-between;
 }
 
+.sabai-task-header .ant-typography {
+  margin-bottom: 0;
+}
+
+.sabai-task-header .ant-typography-secondary {
+  display: block;
+  margin-top: 8px;
+}
+
+.sabai-task-header .ant-btn {
+  flex: 0 0 auto;
+  margin-top: 8px;
+  box-shadow: 0 10px 22px rgba(58, 143, 115, 0.14);
+}
+
 .sabai-task-summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 
 .sabai-task-summary-card {
-  min-height: 104px;
+  position: relative;
+  min-height: 96px;
   padding: 16px;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.66);
   border-radius: 14px;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(235, 250, 241, 0.46)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(217, 155, 74, 0.06));
+    linear-gradient(145deg, rgba(255, 255, 255, 0.74), rgba(235, 250, 241, 0.48)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(217, 155, 74, 0.06));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.72),
     0 10px 24px rgba(52, 116, 90, 0.08);
 }
 
+.sabai-task-summary-card::after {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 36px;
+  height: 36px;
+  content: "";
+  border-radius: 12px;
+  opacity: 0.58;
+}
+
+.sabai-task-summary-card-todo::after {
+  background: linear-gradient(135deg, rgba(238, 203, 139, 0.6), rgba(255, 244, 220, 0.86));
+}
+
+.sabai-task-summary-card-waiting::after {
+  background: linear-gradient(135deg, rgba(129, 198, 213, 0.48), rgba(224, 247, 250, 0.8));
+}
+
+.sabai-task-summary-card-high::after {
+  background: linear-gradient(135deg, rgba(245, 142, 103, 0.48), rgba(255, 232, 219, 0.82));
+}
+
+.sabai-task-summary-card-done::after {
+  background: linear-gradient(135deg, rgba(126, 202, 153, 0.48), rgba(226, 248, 235, 0.84));
+}
+
 .sabai-task-summary-value {
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
   color: #1f352d;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1.1;
 }
 
-.sabai-task-workspace {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.4fr);
-  gap: 18px;
-  align-items: flex-start;
-}
-
 .sabai-task-panel {
-  height: 100%;
+  min-width: 0;
 }
 
-.sabai-task-form-actions {
+.sabai-task-filter-bar {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-.sabai-task-toolbar {
-  gap: 12px;
+.sabai-task-filter-bar .ant-typography {
+  margin-bottom: 0;
+}
+
+.sabai-task-filter-bar .ant-segmented {
+  max-width: 100%;
+  padding: 4px;
+  overflow-x: auto;
+  border: 1px solid rgba(111, 172, 139, 0.16);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.sabai-task-filter-label {
+  display: inline-flex;
+  gap: 6px;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
+  white-space: nowrap;
+}
+
+.sabai-task-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  color: #386a58;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 999px;
+  background: rgba(226, 248, 235, 0.9);
 }
 
 .sabai-task-list {
@@ -67,44 +135,89 @@
 }
 
 .sabai-task-item {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 12px;
   align-items: flex-start;
+  min-width: 0;
   padding: 14px;
+  overflow: hidden;
   border: 1px solid rgba(202, 231, 214, 0.72);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.58);
   transition:
     border-color 160ms ease,
     background 160ms ease,
     transform 160ms ease;
 }
 
+.sabai-task-item::before {
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 4px;
+  content: "";
+  border-radius: 0 999px 999px 0;
+  background: rgba(111, 172, 139, 0.32);
+}
+
+.sabai-task-item-high::before {
+  background: linear-gradient(180deg, #f28b63, #eecb8b);
+  box-shadow: 0 0 14px rgba(242, 139, 99, 0.26);
+}
+
 .sabai-task-item:hover {
-  border-color: rgba(217, 155, 74, 0.26);
-  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(217, 155, 74, 0.28);
+  background: rgba(255, 255, 255, 0.72);
   transform: translateY(-1px);
 }
 
 .sabai-task-item-done {
-  opacity: 0.72;
+  opacity: 0.78;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .sabai-task-item-done .sabai-task-title {
   text-decoration: line-through;
 }
 
+.sabai-task-main {
+  min-width: 0;
+}
+
 .sabai-task-title {
   margin-bottom: 4px;
   color: #1f352d;
-  font-weight: 700;
+  font-weight: 800;
   overflow-wrap: anywhere;
 }
 
 .sabai-task-note {
-  display: block;
+  display: -webkit-box;
+  overflow: hidden;
   overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.sabai-task-tags {
+  margin-top: 10px;
+}
+
+.sabai-task-status-tag {
+  font-weight: 800;
+}
+
+.sabai-task-row-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.sabai-task-status-select {
+  width: 132px;
 }
 
 .sabai-task-actions {
@@ -114,30 +227,56 @@
 }
 
 .sabai-task-empty {
-  padding: 22px 0 4px;
+  padding: 8px 0 2px;
 }
 
-@media (max-width: 820px) {
-  .sabai-task-header {
+.sabai-task-modal-form {
+  padding-top: 8px;
+}
+
+.sabai-task-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .sabai-task-header,
+  .sabai-task-filter-bar {
     flex-direction: column;
   }
 
+  .sabai-task-header .ant-btn {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .sabai-task-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sabai-task-filter-bar .ant-segmented {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
   .sabai-task-summary-grid,
-  .sabai-task-workspace {
+  .sabai-task-modal-grid {
     grid-template-columns: 1fr;
-  }
-
-  .sabai-task-toolbar {
-    align-items: stretch;
-    flex-direction: column;
   }
 
   .sabai-task-item {
     grid-template-columns: auto minmax(0, 1fr);
   }
 
-  .sabai-task-actions {
+  .sabai-task-row-controls {
     grid-column: 1 / -1;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding-left: 28px;
+  }
+
+  .sabai-task-status-select {
+    width: min(100%, 150px);
   }
 }
