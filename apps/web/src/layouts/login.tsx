@@ -9,8 +9,8 @@ export class LoginLayout extends Component {
   render() {
     return (
       <GradientBackground>
-        <Layout className="min-h-screen bg-transparent">
-          <Layout.Content className="flex min-h-screen items-center justify-center">
+        <Layout className="min-h-dvh bg-transparent">
+          <Layout.Content className="flex min-h-dvh items-center justify-center">
             <PageContainer narrow>
               <Outlet />
             </PageContainer>

@@ -12,11 +12,10 @@ import { PageContainer } from '@/ui/layout/PageContainer';
 class MainLayoutComponent extends Component<BreakpointProps> {
   render() {
     const { screens } = this.props;
-    console.log('Current breakpoints:', screens);
 
     return (
       <GradientBackground>
-        <Layout className="min-h-screen bg-transparent">
+        <Layout className="min-h-dvh bg-transparent">
           <FloatingTopNav />
           <Layout.Content>
             <PageContainer>

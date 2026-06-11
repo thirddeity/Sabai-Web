@@ -31,18 +31,18 @@
 
 body {
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
 }
 
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .sabai-gradient-background {
   position: relative;
-  min-height: 100vh;
-  /* overflow: hidden; */
+  min-height: 100dvh;
+  overflow: hidden;
   background:
     linear-gradient(
       135deg,
@@ -77,7 +77,6 @@ body {
 .sabai-gradient-background-content {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
 }
 
 .sabai-glow-orb {
@@ -94,7 +93,6 @@ body {
     rgba(174, 226, 199, 0.18) 42%,
     transparent 70%
   );
-  overflow: hidden; 
 }
 
 .sabai-glow-orb-top-left {
