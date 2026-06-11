@@ -42,7 +42,7 @@ body {
 .sabai-gradient-background {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   background:
     linear-gradient(
       135deg,
@@ -94,6 +94,7 @@ body {
     rgba(174, 226, 199, 0.18) 42%,
     transparent 70%
   );
+  overflow: hidden; 
 }
 
 .sabai-glow-orb-top-left {
