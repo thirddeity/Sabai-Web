@@ -18,7 +18,7 @@ export class HomePage extends Component {
           </Flex>
           <Row gutter={[18, 18]} className="sabai-bento-grid">
             {homeFeatures.map((item, index) => (
-              <Col key={item.title} xs={24} md={6}>
+              <Col key={item.title} xs={12} md={6}>
                 <FeatureCard
                   cue={item.cue}
                   path={item.path}
