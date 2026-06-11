@@ -92,6 +92,9 @@ Status: In progress.
 - [x] Task Management frontend mock: `งานที่ต้องทำ` with CRUD + UX before backend.
 - [x] Improve task row status clarity with explicit `เสร็จแล้ว` / `ยังไม่เสร็จ` tags.
 - [x] Redesign Task Management as a compact manager with modal add/edit, real `ต้องทำ` / `รอได้` / `ทำเสร็จแล้ว` status, and local components.
+- [x] Refine Task Management visual clarity with two priority levels, explicit status colors, in-panel add action, and summary card illustrations.
+- [x] Replace task summary sprite with separate transparent glass icon assets.
+- [x] Align task row action controls with AntD layout and keep them right-aligned in the row card.
 - [ ] Task Management backend schema and API.
 - [ ] Schedule & Reminder.
 - [ ] Finance Tracker.
@@ -103,8 +106,10 @@ Status: In progress.
 ## Phase 5: Stabilize MVP
 
 - [ ] Improve mobile usability.
+  - [x] Stabilize mobile bottom navigation taps after scrolling by removing nested interactive bottom-nav markup while keeping the mobile feature island top nav.
 - [ ] Improve empty states and error messages.
 - [x] Clarify page composition rules in `AGENTS.md`.
+- [x] Add frontend UI decision order for AntD, Tailwind, and CSS usage.
 - [x] Add Vercel SPA rewrite plus app-level not-found fallback.
 - [ ] Review security rules for user-owned data.
 - [ ] Run typecheck, lint, and build.

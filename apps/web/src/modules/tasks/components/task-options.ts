@@ -1,4 +1,5 @@
 import type { TaskFilter, TaskPriority, TaskStatus } from "@/modules/tasks/types";
+import { BaseType } from "antd/lib/typography/Base";
 
 export const taskStatusLabels: Record<TaskStatus, string> = {
   todo: "ต้องทำ",
@@ -13,15 +14,13 @@ export const taskStatusColors: Record<TaskStatus, string> = {
 };
 
 export const taskPriorityLabels: Record<TaskPriority, string> = {
-  high: "สำคัญมาก",
   medium: "ปกติ",
-  low: "รอได้",
+  high: "สำคัญมาก",
 };
 
-export const taskPriorityColors: Record<TaskPriority, string> = {
-  high: "volcano",
-  medium: "green",
-  low: "blue",
+export const taskPriorityColors: Record<TaskPriority, BaseType> = {
+  medium: "success",
+  high: "danger",
 };
 
 export const taskStatusOptions: Array<{ label: string; value: TaskStatus }> = [
@@ -31,9 +30,8 @@ export const taskStatusOptions: Array<{ label: string; value: TaskStatus }> = [
 ];
 
 export const taskPriorityOptions: Array<{ label: string; value: TaskPriority }> = [
-  { value: "high", label: taskPriorityLabels.high },
   { value: "medium", label: taskPriorityLabels.medium },
-  { value: "low", label: taskPriorityLabels.low },
+  { value: "high", label: taskPriorityLabels.high },
 ];
 
 export const taskFilterLabels: Record<TaskFilter, string> = {

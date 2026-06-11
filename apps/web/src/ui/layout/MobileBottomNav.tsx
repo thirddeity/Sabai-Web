@@ -1,4 +1,4 @@
-import { Button, Flex } from "antd";
+import { Flex } from "antd";
 import { Component } from "react";
 import { Link } from "react-router";
 
@@ -33,22 +33,18 @@ class MobileBottomNavComponent extends Component<
               key={item.path}
               to={item.path}
               aria-current={isActive ? "page" : undefined}
-              className="sabai-mobile-nav-link"
+              className={[
+                "sabai-mobile-nav-link",
+                "sabai-nav-button",
+                isActive ? "sabai-nav-button-active" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
-              <Button
-                type="text"
-                className={[
-                  "sabai-nav-button",
-                  isActive ? "sabai-nav-button-active" : "",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <Flex vertical align="center" className={item.color}>
-                  <div>{item.icon}</div>
-                  <div className="text-xs">{item.label}</div>
-                </Flex>
-              </Button>
+              <Flex vertical align="center" className={item.color}>
+                <div>{item.icon}</div>
+                <div className="text-xs">{item.label}</div>
+              </Flex>
             </Link>
           );
         })}

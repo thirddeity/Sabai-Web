@@ -7,6 +7,7 @@ The app shell now uses `/home` as the primary home route, with the old `/dashboa
 The first real module page is `งานที่ต้องทำ` at `/tasks`, implemented as a frontend mock with CRUD + UX before backend work.
 The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page so deep links do not hit a raw platform `NOT_FOUND`.
 The repo rules now also spell out that feature pages should stay thin and split crowded JSX into smaller local components.
+Frontend UI work now has an explicit AntD/Tailwind/CSS decision order so future AI/Codex runs use AntD layout first, Tailwind only for small utilities, and CSS only when it is the right tool for project-specific visuals.
 
 ## Completed
 
@@ -68,7 +69,7 @@ The repo rules now also spell out that feature pages should stay thin and split 
   - Cleaned visible placeholder copy on dashboard and login pages.
 
 - Migrated responsive navigation shell rendering from CSS media-query visibility to `withBreakpoint`:
-  - `MainLayout` now renders `FloatingTopNav` at AntD `md` and above.
+  - `MainLayout` keeps `FloatingTopNav` rendered as the top feature island across screen sizes.
   - `MainLayout` now renders `MobileBottomNav` below AntD `md`.
   - Removed structural nav show/hide CSS and the mobile nav debug log.
 - Refined `withMainStore` typing and wrapper metadata so TypeScript and IDE navigation have clearer component information.
@@ -134,21 +135,15 @@ The repo rules now also spell out that feature pages should stay thin and split 
 
 ## Current Task
 
-Phase 4: Redesign `งานที่ต้องทำ` into a compact task manager with modal add/edit and clear task status.
+Phase 4: Refine `งานที่ต้องทำ` row action controls to use AntD layout.
 
 ## Files Created Or Updated In This Task
 
 - `ROADMAP.md`
 - `PROGRESS.md`
-- `DECISIONS.md`
-- `apps/web/src/modules/tasks/components/TaskFilterBar.tsx`
-- `apps/web/src/modules/tasks/components/TaskFormModal.tsx`
 - `apps/web/src/modules/tasks/components/TaskItemRow.tsx`
 - `apps/web/src/modules/tasks/components/TaskSummaryCards.tsx`
-- `apps/web/src/modules/tasks/components/task-options.ts`
-- `apps/web/src/modules/tasks/pages/index.tsx`
 - `apps/web/src/modules/tasks/styles/index.css`
-- `apps/web/src/modules/tasks/types/index.ts`
 
 ## Out Of Scope For This Task
 
@@ -167,12 +162,11 @@ Phase 4: Redesign `งานที่ต้องทำ` into a compact task man
 
 ## Task Update
 
-- Redesigned the task frontend mock into a compact manager view.
-- Moved add/edit into one shared modal form.
-- Added real task status values: `todo`, `waiting`, and `done`.
-- Added a `รอได้` filter backed by task status, not inferred from priority.
-- Split the crowded task page into local presentational components.
-- Kept the task module mock-only; no backend, API, or database changes were added.
+- Replaced task row action layout classes with AntD `Flex` and `Space`.
+- Removed the unused task row action CSS classes and the mobile override that moved controls out of the right side of the card.
+- Kept task row visual CSS for the card surface, status rail, text, and tags because it owns project-specific treatment.
+- Tightened `TaskSummaryCards` config typing so workspace typecheck passes.
+- Kept the task module mock-only; no backend, API, database, dependency, or deployment changes were added.
 
 ## Next Recommended Task
 
@@ -192,3 +186,13 @@ Before starting that task, read:
 5. `ROADMAP.md`
 6. `PROGRESS.md`
 7. `DECISIONS.md`
+
+## Mobile Navigation Stabilization Update
+
+- Investigated the mobile-only symptom where switching tabs after scrolling to the bottom of `/tasks` could require a second tap.
+- Identified the likely frontend cause as nested interactive bottom-nav markup (`Link` wrapping an AntD `Button`) interacting poorly with mobile tap handling after scroll.
+- Restored `MainLayout` so `FloatingTopNav` renders on mobile as the feature island navbar.
+- Changed `MobileBottomNav` so each tab is a single React Router `Link` styled as the tap target, instead of an anchor wrapping a button.
+- Refined `MobileBottomNav` glass styling with stronger surface layering, clearer active state, readable labels, and stable tap targets.
+- Added explicit mobile tap target sizing, `touch-action: manipulation`, and iPhone safe-area spacing for the bottom nav while keeping top spacing for the feature island navbar.
+- Verified `antd lint ./src --format json`, `bun run typecheck`, `bun run lint`, and `bun run build` pass.

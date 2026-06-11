@@ -52,7 +52,7 @@ export const useMainStore = createStore<MainStoreProps>()((set) => ({
     {
       color: "text-yellow-500",
       icon: <OrderedListOutlined />,
-      label: "งานที่ต้องทำ",
+      label: "งาน",
       path: AppPath.tasks,
     },
   ],

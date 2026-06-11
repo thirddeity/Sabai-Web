@@ -1,5 +1,4 @@
-import { Button, Flex, Typography } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { Flex, Typography } from "antd";
 import { Component } from "react";
 import type { ChangeEvent } from "react";
 
@@ -49,7 +48,7 @@ const starterTasks: TaskItem[] = [
     id: "task-demo-3",
     title: "จัดแฟ้มเอกสารประกัน",
     note: "แยกเอกสารที่หมดอายุแล้วออกจากแฟ้มหลัก",
-    priority: "low",
+    priority: "medium",
     status: "waiting",
     createdAt: "2026-06-11T08:20:00.000Z",
     updatedAt: "2026-06-11T08:20:00.000Z",
@@ -275,20 +274,6 @@ export class TaskPage extends Component<Record<string, never>, TaskPageState> {
     });
   };
 
-  private handleTaskStatusChange = (taskId: string, status: TaskStatus) => {
-    this.setState({
-      tasks: this.state.tasks.map((task) =>
-        task.id === taskId
-          ? {
-            ...task,
-            status,
-            updatedAt: new Date().toISOString(),
-          }
-          : task,
-      ),
-    });
-  };
-
   private handleToggleDone = (taskId: string) => {
     this.setState({
       tasks: this.state.tasks.map((task) =>
@@ -332,7 +317,6 @@ export class TaskPage extends Component<Record<string, never>, TaskPageState> {
             task={task}
             onDelete={this.handleDeleteTask}
             onEdit={this.handleStartEdit}
-            onStatusChange={this.handleTaskStatusChange}
             onToggleDone={this.handleToggleDone}
           />
         ))}
@@ -354,20 +338,13 @@ export class TaskPage extends Component<Record<string, never>, TaskPageState> {
               รวมงานที่ต้องทำ งานที่รอได้ และงานที่ทำเสร็จแล้วไว้ในที่เดียว
             </Typography.Paragraph>
           </div>
-          <Button
-            type="primary"
-            size="large"
-            icon={<PlusOutlined />}
-            onClick={this.handleOpenAddModal}
-          >
-            เพิ่มงาน
-          </Button>
         </Flex>
         <TaskSummaryCards summary={summary} />
         <GlassCard liftOnHover={false} className="sabai-task-panel">
           <TaskFilterBar
             filter={filter}
             summary={summary}
+            onAddTask={this.handleOpenAddModal}
             onFilterChange={this.handleFilterChange}
           />
           {this.renderTaskList()}

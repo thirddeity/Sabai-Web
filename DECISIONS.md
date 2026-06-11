@@ -2,12 +2,93 @@
 
 ## Decision Log
 
+### 2026-06-12: Frontend UI work must choose AntD before Tailwind and CSS
+
+Decision:
+
+- Use Ant Design components and props first for frontend layout and standard UI surfaces.
+- Use Tailwind only for small targeted utilities.
+- Use feature CSS only for project-specific visual treatment or cases AntD/Tailwind do not express cleanly.
+- Do not add CSS grid/flex layout classes when AntD `Row`, `Col`, `Flex`, `Space`, or responsive props can express the layout directly.
+- Before adding a new CSS class, explain why AntD props or a small Tailwind utility are not the better fit.
+
+Reason:
+
+- The project uses Ant Design as the main UI system and Tailwind as a limited utility layer.
+- Layout classes in feature CSS make future UI work drift away from the project rules and create avoidable review debt.
+- A short decision order gives future AI/Codex runs a concrete checklist before writing UI code.
+
+Impact:
+
+- Future frontend UI tasks must summarize the AntD/Tailwind/CSS choice before editing.
+- Review should reject CSS classes that only duplicate AntD layout behavior.
+- CSS remains appropriate for glass, gradient, shadow, pseudo-element, animation, and repeated Sabai visual patterns.
+
+### 2026-06-12: Mobile top island stays while bottom nav uses one interactive element per tab
+
+Decision:
+
+- Render each mobile bottom navigation tab as a single React Router `Link` tap target.
+- Do not nest Ant Design `Button` inside `Link` for mobile shell navigation.
+- Keep `FloatingTopNav` rendered on mobile as the feature island navbar.
+- Give the mobile bottom nav explicit tap target height, `touch-action: manipulation`, safe-area-aware bottom spacing, and a clear glass active state.
+
+Reason:
+
+- Nested interactive markup can behave inconsistently on touch browsers, especially immediately after viewport scrolling or inertial scroll.
+- Keeping each bottom tab as one link preserves route semantics and reduces tap ambiguity without removing the mobile top island.
+- Safe-area-aware spacing keeps the tab bar away from iOS browser/home indicators.
+
+Impact:
+
+- Future mobile shell nav items should be links styled as buttons, not links wrapping buttons.
+- `FloatingTopNav` is part of the mobile app shell and should not be removed when refining bottom navigation.
+- AntD `Button` remains appropriate for real actions, but route navigation tabs should prefer a single link element.
+
+### 2026-06-12: Task summary art uses separate transparent glass icons
+
+Decision:
+
+- Use four separate transparent PNG assets for task summary cards instead of one sprite sheet.
+- Use a glass icon style for the summary art so it fits the Sabai glass UI direction.
+- Keep labels, counts, and color coding as the primary way to communicate task state.
+
+Reason:
+
+- Separate files are easier to replace per card and avoid fragile sprite positioning.
+- Transparent assets sit more naturally inside glass cards than the previous solid-background clay sprite.
+
+Impact:
+
+- `TaskSummaryCards` should import each summary icon directly.
+- Future summary art changes can replace one PNG without touching the other cards.
+- Generated images must be kept small enough for UI use and should not include text.
+
+### 2026-06-11: Task priority uses two clear levels
+
+Decision:
+
+- Use only two task priority levels in the MVP UI: `medium` for `ปกติ` and `high` for `สำคัญมาก`.
+- Show `ปกติ` with green and `สำคัญมาก` with red.
+- Keep task status colors separate from priority colors so users can read workflow state and importance independently.
+
+Reason:
+
+- Three levels made `รอได้` ambiguous because it could mean either status or priority.
+- Two priority levels are easier for Thai users of many ages to scan and choose quickly.
+
+Impact:
+
+- Task forms should only offer `ปกติ` and `สำคัญมาก`.
+- `รอได้` must remain a task status, not a priority.
+- Future backend task schema should not add a low-priority value unless there is a clear product need.
+
 ### 2026-06-11: Task status is separate from task priority
 
 Decision:
 
 - Use a dedicated `TaskStatus` value for task workflow state: `todo`, `waiting`, and `done`.
-- Keep `TaskPriority` as a separate value for importance: `high`, `medium`, and `low`.
+- Keep `TaskPriority` as a separate value for importance: `high` and `medium`.
 - Let the task list filter by `ต้องทำ`, `รอได้`, `สำคัญ`, `ทำเสร็จแล้ว`, and `ทั้งหมด`.
 
 Reason:
@@ -190,22 +271,24 @@ Impact:
 - Components under `apps/web/src/ui/layout/` should use breakpoint state from `withBreakpoint` when they need mobile/desktop differences.
 - `FloatingTopNav`, `MobileBottomNav`, `PageContainer`, and similar shells should not rely on `styles.css` to control structural visibility.
 
-### 2026-06-11: Use AntD `md` for app nav shell switching
+### 2026-06-11: Use AntD breakpoints for app nav shell behavior
 
 Decision:
 
-- Show `FloatingTopNav` when `screens.md` is true.
+- Keep `FloatingTopNav` rendered as the top feature island across screen sizes.
 - Show `MobileBottomNav` when `screens.md` is false.
+- Keep the full top navigation links inside `FloatingTopNav` gated by the component's existing larger-screen logic.
 
 Reason:
 
-- The desktop top nav includes the brand area plus five primary actions, so it should not be forced into small tablet or phone widths.
-- Using AntD's built-in `md` breakpoint keeps shell behavior aligned with `withBreakpoint`.
+- The full desktop top nav links include five primary actions, so they should not be forced into small tablet or phone widths.
+- The mobile top island still provides brand and account actions, while the bottom nav carries primary route switching.
+- Using AntD breakpoints keeps shell behavior aligned with `withBreakpoint`.
 
 Impact:
 
 - CSS may still adjust spacing and visual details at small widths.
-- CSS must not decide whether top or bottom navigation exists.
+- CSS must not decide whether bottom navigation exists.
 
 ### 2026-06-11: Use the base AntD button variant for the FeatureCard CTA
 

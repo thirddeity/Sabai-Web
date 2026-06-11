@@ -1,20 +1,18 @@
-import { Button, Checkbox, Popconfirm, Select, Space, Tag, Typography } from "antd";
+import { Button, Checkbox, Flex, Grid, Popconfirm, Space, Tag, Typography } from "antd";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
-import type { TaskItem, TaskStatus } from "@/modules/tasks/types";
+import type { TaskItem } from "@/modules/tasks/types";
 import {
   taskPriorityColors,
   taskPriorityLabels,
   taskStatusColors,
   taskStatusLabels,
-  taskStatusOptions,
 } from "./task-options";
 
 export interface TaskItemRowProps {
   task: TaskItem;
   onDelete: (taskId: string) => void;
   onEdit: (task: TaskItem) => void;
-  onStatusChange: (taskId: string, status: TaskStatus) => void;
   onToggleDone: (taskId: string) => void;
 }
 
@@ -22,17 +20,18 @@ export function TaskItemRow({
   task,
   onDelete,
   onEdit,
-  onStatusChange,
   onToggleDone,
 }: TaskItemRowProps) {
   const isDone = task.status === "done";
   const itemClassName = [
     "sabai-task-item",
+    `sabai-task-item-${task.status}`,
     task.priority === "high" && !isDone ? "sabai-task-item-high" : "",
     isDone ? "sabai-task-item-done" : "",
   ]
     .filter(Boolean)
     .join(" ");
+  const isLg = Grid.useBreakpoint().lg;
 
   return (
     <div className={itemClassName}>
@@ -48,25 +47,24 @@ export function TaskItemRow({
             {task.note}
           </Typography.Text>
         ) : null}
+        <Flex justify="space-between" align="center">
+        </Flex>
         <Space wrap size={[8, 8]} className="sabai-task-tags">
-          <Tag color={taskStatusColors[task.status]} className="sabai-task-status-tag">
+          <Tag
+            color={taskStatusColors[task.status]}
+            className={`sabai-task-status-tag sabai-task-status-tag-${task.status}`}
+          >
             {taskStatusLabels[task.status]}
           </Tag>
-          <Tag color={taskPriorityColors[task.priority]}>
+          <Typography.Text type={taskPriorityColors[task.priority]} className="font-bold text-sm!">
             {taskPriorityLabels[task.priority]}
-          </Tag>
+          </Typography.Text>
         </Space>
       </div>
-      <div className="sabai-task-row-controls">
-        <Select<TaskStatus>
-          aria-label={`เปลี่ยนสถานะ ${task.title}`}
-          className="sabai-task-status-select"
-          value={task.status}
-          onChange={(status) => onStatusChange(task.id, status)}
-          options={taskStatusOptions}
-        />
-        <div className="sabai-task-actions">
+      <Flex justify="flex-end" align="center">
+        <Space size={6}>
           <Button
+            size={isLg ? "medium" : "small"}
             aria-label={`แก้ไข ${task.title}`}
             icon={<EditOutlined />}
             onClick={() => onEdit(task)}
@@ -79,13 +77,14 @@ export function TaskItemRow({
             onConfirm={() => onDelete(task.id)}
           >
             <Button
+              size={isLg ? "medium" : "small"}
               danger
               aria-label={`ลบ ${task.title}`}
               icon={<DeleteOutlined />}
             />
           </Popconfirm>
-        </div>
-      </div>
+        </Space>
+      </Flex>
     </div>
   );
 }
