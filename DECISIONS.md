@@ -334,3 +334,20 @@ Impact:
 
 - Future modules must align wording across home cards, navigation, page titles, buttons, empty states, and documentation.
 - Broad labels should be replaced when a more concrete Thai action label exists.
+
+### 2026-06-11: Vercel SPA deploys need a rewrite to `index.html`
+
+Decision:
+
+- Add a repo-level `vercel.json` that rewrites SPA deep links to `/index.html`.
+- Keep a React Router `*` fallback route so unknown paths still render an in-app message after the SPA boots.
+
+Reason:
+
+- Vercel's static deployment path will return its own `NOT_FOUND` when a browser requests a client-side route such as `/home` or `/tasks` directly and the project has no rewrite.
+- This repo uses `createBrowserRouter`, so deep links must be handled by the app after the initial HTML is served.
+
+Impact:
+
+- Direct visits and refreshes on app routes now land in the SPA instead of showing a raw Vercel 404.
+- Unknown routes become easier to understand because the app can render a Thai fallback screen.

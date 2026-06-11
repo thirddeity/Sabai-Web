@@ -102,6 +102,7 @@ Status: In progress.
 
 - [ ] Improve mobile usability.
 - [ ] Improve empty states and error messages.
+- [x] Add Vercel SPA rewrite plus app-level not-found fallback.
 - [ ] Review security rules for user-owned data.
 - [ ] Run typecheck, lint, and build.
 - [ ] Prepare simple deployment path on Cloudflare Pages / Workers.

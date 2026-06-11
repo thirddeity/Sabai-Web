@@ -5,6 +5,7 @@
 Phase 4 MVP Modules is in progress.
 The app shell now uses `/home` as the primary home route, with the old `/dashboard` path redirecting to `/home` for compatibility.
 The first real module page is `งานที่ต้องทำ` at `/tasks`, implemented as a frontend mock with CRUD + UX before backend work.
+The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page so deep links do not hit a raw platform `NOT_FOUND`.
 
 ## Completed
 
@@ -131,39 +132,17 @@ The first real module page is `งานที่ต้องทำ` at `/tasks`
 
 ## Current Task
 
-Phase 4: Fix Thai text regression in Home and placeholder module pages.
+Phase 4: Fix Vercel SPA `NOT_FOUND` behavior for deep links.
 
 ## Files Created Or Updated In This Task
 
 - `ROADMAP.md`
 - `PROGRESS.md`
 - `DECISIONS.md`
-- `MVP.md`
-- `UI_GUIDE.md`
-- `apps/web/src/modules/tasks/api.ts`
-- `apps/web/src/modules/tasks/pages/index.tsx`
-- `apps/web/src/modules/tasks/styles/index.css`
-- `apps/web/src/modules/tasks/types/index.ts`
-- `apps/web/src/modules/tasks/components/.gitkeep`
-- `apps/web/src/main.tsx`
-- `apps/web/src/assets/sabai-life-visual.svg`
-- `apps/web/src/hoc/withMainStore.tsx`
-- `apps/web/src/modules/auth/pages/index.tsx`
-- `apps/web/src/modules/home/api.ts`
-- `apps/web/src/modules/home/pages/index.tsx`
-- `apps/web/src/modules/home/mock.ts`
-- `apps/web/src/modules/home/types/index.ts`
-- `apps/web/src/modules/placeholder/pages/index.tsx`
-- `apps/web/src/router/paths.ts`
-- `apps/web/src/layouts/main.tsx`
-- `apps/web/src/store/MainStore.tsx`
-- `apps/web/src/types/main-store-types.ts`
-- `apps/web/src/ui/components/FeatureCard.tsx`
-- `apps/web/src/ui/layout/FloatingTopNav.tsx`
-- `apps/web/src/ui/layout/MobileBottomNav.tsx`
-- `apps/web/src/styles.css`
-- `package.json`
-- `AGENTS.md`
+- `vercel.json`
+- `apps/web/vercel.json`
+- `apps/web/src/router/index.tsx`
+- `apps/web/src/modules/placeholder/pages/not-found.tsx`
 
 ## Out Of Scope For This Task
 
@@ -178,6 +157,7 @@ Phase 4: Fix Thai text regression in Home and placeholder module pages.
 - Task backend implementation.
 - Task persistence.
 - Per-component font overrides.
+- Vercel backend deployment.
 
 ## Next Recommended Task
 

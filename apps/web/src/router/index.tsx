@@ -5,6 +5,7 @@ import { MainLayout } from "@/layouts/main";
 import { LoginPage } from "@/modules/auth/pages";
 import { HomePage } from "@/modules/home/pages";
 import { ModulePlaceholderPage } from "@/modules/placeholder/pages";
+import { NotFoundPage } from "@/modules/placeholder/pages/not-found";
 import { TaskPage } from "@/modules/tasks/pages";
 import { loginLoader, protectedLoader } from "@/router/middleware";
 import { AppPath } from "@/router/paths";
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "tasks",
         element: <TaskPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
