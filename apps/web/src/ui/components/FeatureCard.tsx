@@ -39,7 +39,6 @@ export function FeatureCard({
           <Typography.Paragraph type="secondary">{subtitle}</Typography.Paragraph>
         </div>
         <div className="sabai-feature-action-shell">
-          <div className="sabai-feature-action-shadow" aria-hidden="true" />
           <Button type="text" size="large" className="sabai-feature-action">
             ดูภาพรวม
           </Button>

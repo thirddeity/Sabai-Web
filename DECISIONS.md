@@ -228,3 +228,54 @@ Impact:
 
 - The CTA can keep its glass style in capable browsers while falling back to a simpler visible border in less capable environments.
 - Future decorative CSS should define normal custom-property defaults when using `@property`-registered values.
+
+### 2026-06-11: Use mask longhands for the FeatureCard CTA glass border
+
+Decision:
+
+- Build the `ดูภาพรวม` CTA `::after` glass border with `mask-image` + `mask-clip` longhands plus `mask-composite` / `-webkit-mask-composite`, instead of the `mask` / `-webkit-mask` shorthand.
+
+Reason:
+
+- The production build looked broken while dev looked correct. Inspecting the built `dist` CSS showed the esbuild CSS minifier dropped the standard `mask-composite: exclude` and moved `-webkit-mask-composite` before the `mask`/`-webkit-mask` shorthand. Because the shorthand resets `mask-composite` to `add`, the cutout failed and the dark conic-gradient `::after` covered the whole button.
+- Using longhands removes the shorthand that resets `mask-composite`, so the effect survives minification regardless of declaration order.
+
+Impact:
+
+- This supersedes the earlier direction to avoid mask-based glass borders; the mask border is acceptable when written with longhands.
+- Future decorative borders that rely on `mask-composite` must avoid the `mask`/`-webkit-mask` shorthand and verify the built CSS, not only dev.
+- Keep the `@supports` fallbacks for browsers without conic-gradient or mask-composite support.
+
+### 2026-06-11: Remove the drop shadow under the FeatureCard CTA
+
+Decision:
+
+- Remove the `sabai-feature-action-shadow` element and its CSS, keeping the `sabai-feature-action-shell` wrapper.
+
+Reason:
+
+- The owner wanted a cleaner CTA without the heavy cast shadow under the button.
+
+Impact:
+
+- The shell wrapper stays only to left-align the button; it no longer positions a shadow layer.
+- The glass surface, conic-gradient border, and hover motion remain unchanged.
+
+### 2026-06-11: Run all workspace scripts through the Bun runtime
+
+Decision:
+
+- Add `--bun` to the root `dev`, `typecheck`, and `build` scripts so Vite, `tsc`, and other CLIs run on the Bun runtime instead of whatever `node` is found in `PATH`.
+- Pin the Bun version with a `.bun-version` file (`1.3.14`) alongside the existing `packageManager` field, and declare `engines.bun >= 1.3.0`.
+- Add a `.gitattributes` file with `eol=lf` and explicit binary entries.
+
+Reason:
+
+- A machine had an Intel (x64) `node` installed through nvm while the CPU was Apple Silicon (arm64). Vite ran under that x64 `node` and tried to load `@rollup/rollup-darwin-x64`, but Bun had correctly installed the arm64 Rollup native binary, causing `Cannot find module @rollup/rollup-darwin-x64`.
+- Forcing scripts through Bun removes the dependency on the host `node` architecture and keeps behavior consistent across Mac (Intel/ARM) and Windows.
+
+Impact:
+
+- Contributors must install dependencies with `bun install` on each machine and must never copy `node_modules` across machines, because native binaries are tied to OS and CPU.
+- The project standardizes on Bun only; mixing npm, yarn, or pnpm is not allowed to avoid conflicting lockfiles.
+- Host `node` may still be the wrong architecture for direct `node` calls; installing an architecture-matched `node` is recommended but no longer required to run the app.

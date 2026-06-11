@@ -78,6 +78,32 @@ Documentation maintenance is in progress to lock down responsive layout rules fo
   - Changed the WebKit mask composite value from legacy `xor` to `destination-out`.
   - Added fallback border styling when conic gradients or mask compositing are unavailable.
 
+- Made the workspace runtime portable across machines:
+  - Added `--bun` to the root `dev`, `typecheck`, and `build` scripts so Vite and `tsc` run on the Bun runtime instead of the host `node`.
+  - Fixed the `Cannot find module @rollup/rollup-darwin-x64` error that came from an x64 `node` running on an arm64 machine.
+  - Added a `.bun-version` file (`1.3.14`) and an `engines.bun >= 1.3.0` field.
+  - Added a `.gitattributes` file with `eol=lf` and binary entries for cross-platform consistency.
+  - Verified `bun run dev:web` starts Vite without the Rollup native binary error.
+
+- Added a single-command monorepo dev workflow:
+  - Added a root `dev` script that runs `apps/web` and `apps/api` together with `bun --bun run --filter '@sabai/*' dev`.
+  - Kept `dev:web` and `dev:api` for running a single app.
+  - Switched `typecheck` and `build` to `bun --bun run --filter '@sabai/*' ...` so they cover the whole monorepo and scale to future workspaces.
+  - Used the `@sabai/*` filter instead of `*` to avoid the root package matching itself.
+  - Used Bun's native `--filter` runner so no extra dependency such as `concurrently` was added.
+  - Verified `bun run typecheck`, `bun run lint`, and `bun run build` all pass.
+
+- Fixed the FeatureCard `ดูภาพรวม` CTA glass border breaking in production but not in dev:
+  - Root cause: the esbuild CSS minifier dropped the standard `mask-composite: exclude` and reordered `-webkit-mask-composite` before the `mask`/`-webkit-mask` shorthand, which reset the composite to `add` so the `::after` overlay covered the whole button.
+  - Rewrote the border mask from `mask`/`-webkit-mask` shorthand to `mask-image` + `mask-clip` longhands so no shorthand can reset `mask-composite`.
+  - Verified in the built `dist` CSS that `mask-composite: exclude` and `-webkit-mask-composite` now survive minification.
+  - Kept the existing `@supports` fallbacks unchanged.
+- Removed the drop shadow under the FeatureCard CTA:
+  - Deleted the `sabai-feature-action-shadow` element and its base + hover CSS.
+  - Kept the `sabai-feature-action-shell` wrapper for left-aligning the button.
+- Added per-app convenience scripts `build:web` and `preview:web` for building and previewing only `apps/web` from the repo root.
+- Verified `bun run typecheck`, `bun run lint`, and `bun run build:web` all pass.
+
 ## Current Task
 
 Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
@@ -100,6 +126,7 @@ Phase 2.6: Frontend UI Prototype for Sabai Life Console placeholder pages.
 - `apps/web/src/ui/layout/FloatingTopNav.tsx`
 - `apps/web/src/ui/layout/MobileBottomNav.tsx`
 - `apps/web/src/styles.css`
+- `package.json`
 - `AGENTS.md`
 
 ## Out Of Scope For This Task
