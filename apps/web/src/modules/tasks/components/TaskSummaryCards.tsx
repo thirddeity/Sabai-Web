@@ -45,7 +45,7 @@ const summaryCards: TaskSummaryCardConfig[] = [
   },
   {
     art: taskSummaryDone,
-    label: "ทำเสร็จแล้ว",
+    label: "เสร็จแล้ว",
     valueKey: "done",
     color: "text-green-500!",
   },
@@ -68,7 +68,7 @@ export function TaskSummaryCards({ summary }: TaskSummaryCardsProps) {
             <img
               src={card.art}
               alt=""
-              className="w-16 h-16"
+              className="lg:w-16 lg:h-16 w-12 h-12"
               aria-hidden="true"
             />
           </div>

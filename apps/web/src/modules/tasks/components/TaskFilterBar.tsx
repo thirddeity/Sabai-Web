@@ -1,5 +1,5 @@
 import { Button, Segmented, Typography } from "antd";
-import { PlusCircleFilled, PlusCircleOutlined, PlusCircleTwoTone, PlusOutlined } from "@ant-design/icons";
+import { PlusCircleOutlined } from "@ant-design/icons";
 
 import type { TaskFilter } from "@/modules/tasks/types";
 import type { TaskSummary } from "./TaskSummaryCards";
