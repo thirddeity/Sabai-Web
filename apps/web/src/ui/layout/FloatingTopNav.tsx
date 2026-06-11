@@ -64,7 +64,7 @@ class FloatingTopNavComponent extends Component<
             variant="solid"
             color="red"
             size={isLg ? "middle" : "small"}
-            className="bg-red-500! h-11!"
+            className="bg-red-500! h-8! w-10! lg:h-10! lg:w-auto!"
             onClick={this.handleSignOut}
           >
             <>
