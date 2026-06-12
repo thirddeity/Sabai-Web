@@ -1,0 +1,23 @@
+.sabai-glow-orb {
+  position: absolute;
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.34;
+  background: radial-gradient(circle,
+      rgba(128, 204, 165, 0.44) 0%,
+      rgba(174, 226, 199, 0.18) 42%,
+      transparent 70%);
+}
+
+.sabai-glow-orb-top-left {
+  top: -12%;
+  left: -12%;
+}
+
+.sabai-glow-orb-bottom-right {
+  right: -14%;
+  bottom: -16%;
+}

@@ -217,3 +217,33 @@ This update records app-shell changes made directly in code so the documents mat
   - `withRouter` exposes `location`, `navigate`, and `params` for class components.
 
 This work stays frontend-only and mock-only: no real auth, backend, database, or dependency changes were added.
+
+## CSS Modularization Update (Co-location)
+
+Broke up the 833-line `apps/web/src/styles.css` monolith so CSS lives with its owning component or module, matching Clean Architecture co-location.
+
+- Trimmed `styles.css` to global base only: font/Tailwind imports, `:root` tokens, `@property`, `body`/`#root`, shared `@keyframes` (`sabai-fade-up`, `sabai-card-rise`), and the shared `.sabai-kicker` atom.
+- Co-located effect CSS and added a local import in each component:
+  - `ui/effects/GradientBackground.css`, `GlowOrb.css`, `GlassCard.css`, `MotionCard.css`, `GlassButton.css`.
+- Co-located layout CSS:
+  - `ui/layout/PageContainer.css` for the page container.
+  - Moved top-nav and mobile bottom-nav CSS into `ui/layout/index.css`, now imported by both `FloatingTopNav` and `MobileBottomNav`.
+- Co-located `ui/components/FeatureCard.css`.
+- Added feature module styles: `modules/home/styles/index.css` and `modules/auth/styles/index.css` (login `sabai-soft-button`), each imported by its page.
+- Removed confirmed-dead CSS (`.sabai-nav-note`, `.sabai-life-hero`, `.sabai-hero-grid`, `.sabai-life-visual-*`, `.sabai-priority-*`, `.sabai-page-head`, `.sabai-section-divider`, `.sabai-empty-placeholder`).
+- Fixed a pre-existing lint error in `modules/tasks/components/task-options.ts` (`import type` for `BaseType`).
+- Verified `bun run typecheck`, `bun run lint`, and `bun run build:web` all pass, and confirmed the relocated classes plus the `mask-composite: exclude` glass-button fix survive in the built `dist` CSS.
+
+No runtime, dependency, backend, or behavior changes were introduced; this is a CSS organization refactor only.
+
+## CSS Folder Cleanup For Shared `ui/`
+
+Moved the co-located CSS out of the `ui/` folder roots into a `styles/` subfolder per group so each root holds `.tsx` only.
+
+- `ui/effects/styles/`: `GradientBackground.css`, `GlowOrb.css`, `GlassCard.css`, `MotionCard.css`, `GlassButton.css`.
+- `ui/layout/styles/`: `PageContainer.css`, `FloatingTopNav.css`, `MobileBottomNav.css`, and shared `nav.css`.
+- `ui/components/styles/`: `FeatureCard.css`.
+- Split the former `ui/layout/index.css` into `FloatingTopNav.css` (brand/aurora + top nav), `MobileBottomNav.css` (bottom nav), and `nav.css` (shared `.sabai-nav-button` states), imported by the matching components.
+- Updated every component import to `./styles/<File>.css` and deleted the old root-level CSS files.
+- `modules/*` already used `styles/`, so they were left unchanged.
+- Verified `bun run typecheck`, `bun run lint`, and `bun run build:web` all pass; the built CSS bundle stayed at ~28.8 kB.

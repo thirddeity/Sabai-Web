@@ -1,0 +1,14 @@
+.sabai-soft-button {
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(58, 143, 115, 0.11);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.sabai-soft-button:hover {
+  box-shadow: 0 10px 20px rgba(58, 143, 115, 0.13);
+  transform: translateY(-1px);
+}

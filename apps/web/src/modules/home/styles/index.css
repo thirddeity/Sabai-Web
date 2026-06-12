@@ -1,0 +1,17 @@
+.sabai-life-hub {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sabai-section-head {
+  margin-bottom: 16px;
+}
+
+.sabai-life-hub .ant-typography {
+  color: #234337;
+}
+
+.sabai-life-hub .ant-typography-secondary {
+  color: rgba(35, 67, 55, 0.72) !important;
+}

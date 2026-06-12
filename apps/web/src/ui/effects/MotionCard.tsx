@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 
 import { GlassCard } from '@/ui/effects/GlassCard';
 import type { GlassCardProps } from '@/ui/effects/GlassCard';
+import './styles/MotionCard.css';
 
 export interface MotionCardProps extends GlassCardProps {
   motionDelayMs?: number;

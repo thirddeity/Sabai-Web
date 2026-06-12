@@ -1,6 +1,8 @@
 import { Card } from 'antd';
 import type { CardProps } from 'antd';
 
+import './styles/GlassCard.css';
+
 export interface GlassCardProps extends CardProps {
   liftOnHover?: boolean;
 }

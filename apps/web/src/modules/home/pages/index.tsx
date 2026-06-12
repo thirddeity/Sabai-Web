@@ -3,6 +3,7 @@ import { Component } from "react";
 
 import { homeFeatures } from "@/modules/home/mock";
 import { FeatureCard } from "@/ui/components/FeatureCard";
+import "../styles/index.css";
 
 export class HomePage extends Component {
   render() {

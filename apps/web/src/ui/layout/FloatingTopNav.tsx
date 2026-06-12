@@ -12,7 +12,8 @@ import { withRouter, type WithRouterProps } from "@/hoc/withRouter";
 import { signOutDemo } from "@/modules/auth/session";
 import { AppPath } from "@/router/paths";
 import { GlassButton } from "../effects/GlassButton";
-import "./index.css";
+import "./styles/nav.css";
+import "./styles/FloatingTopNav.css";
 
 class FloatingTopNavComponent extends Component<
   WithMainStoreProps & BreakpointProps & WithRouterProps

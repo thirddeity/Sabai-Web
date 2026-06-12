@@ -7,6 +7,7 @@ import { signInDemo } from "@/modules/auth/session";
 import { AppPath } from "@/router/paths";
 import { GlassCard } from "@/ui/effects/GlassCard";
 import { GlassButton } from "@/ui/effects/GlassButton";
+import "../styles/index.css";
 
 class LoginPageComponent extends Component<WithRouterProps> {
   handleDemoLogin = () => {

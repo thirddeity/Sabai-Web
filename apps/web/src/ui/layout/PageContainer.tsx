@@ -1,5 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
+import './styles/PageContainer.css';
+
 export interface PageContainerProps extends PropsWithChildren {
   narrow?: boolean;
   className?: string;

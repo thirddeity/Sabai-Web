@@ -1,6 +1,8 @@
 import { Button } from "antd";
 import type { ButtonProps } from "antd";
 
+import "./styles/GlassButton.css";
+
 export type GlassButtonProps = ButtonProps;
 
 export function GlassButton({

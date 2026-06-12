@@ -1,0 +1,23 @@
+.sabai-page-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 108px 20px 108px;
+  animation: sabai-fade-up 360ms ease-out both;
+}
+
+.sabai-page-container-narrow {
+  width: min(100%, 520px);
+}
+
+@media (max-width: 991px) {
+  .sabai-page-container {
+    padding: 92px 16px 104px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sabai-page-container {
+    padding-top: 84px;
+    padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+  }
+}

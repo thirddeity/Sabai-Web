@@ -2,6 +2,7 @@ import { Flex, Typography } from "antd";
 
 import { GlassButton } from "@/ui/effects/GlassButton";
 import { MotionCard } from "@/ui/effects/MotionCard";
+import "./styles/FeatureCard.css";
 
 export interface FeatureCardProps {
   title: string;

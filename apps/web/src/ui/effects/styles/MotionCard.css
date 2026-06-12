@@ -1,0 +1,4 @@
+.sabai-motion-card {
+  will-change: transform, opacity;
+  animation: sabai-card-rise 420ms ease-out both;
+}

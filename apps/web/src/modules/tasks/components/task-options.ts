@@ -1,5 +1,5 @@
 import type { TaskFilter, TaskPriority, TaskStatus } from "@/modules/tasks/types";
-import { BaseType } from "antd/lib/typography/Base";
+import type { BaseType } from "antd/lib/typography/Base";
 
 export const taskStatusLabels: Record<TaskStatus, string> = {
   todo: "ต้องทำ",

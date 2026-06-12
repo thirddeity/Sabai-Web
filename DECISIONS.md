@@ -2,6 +2,32 @@
 
 ## Decision Log
 
+### 2026-06-12: Co-locate CSS with its owning component or module
+
+Decision:
+
+- Split the global `apps/web/src/styles.css` monolith so each visual component or feature owns its CSS file and imports it directly.
+- Keep `styles.css` for global base only: font/Tailwind imports, `:root` tokens, `@property`, `body`/`#root`, shared `@keyframes`, and truly shared atoms used across pages (`.sabai-kicker`).
+- Co-locate visual primitives in a `styles/` subfolder inside each shared `ui/` directory, one CSS file per component: `ui/effects/styles/{GradientBackground,GlowOrb,GlassCard,MotionCard,GlassButton}.css`, `ui/layout/styles/{PageContainer,FloatingTopNav,MobileBottomNav,nav}.css`, and `ui/components/styles/FeatureCard.css`.
+- Keep the `.css` out of the `ui/` folder roots so each root holds `.tsx` only and stays easy to scan.
+- App-shell nav CSS that is shared by both navs lives in `ui/layout/styles/nav.css` and is imported by both `FloatingTopNav` and `MobileBottomNav`; component-specific nav CSS lives in its own file.
+- Keep feature CSS in its module: `modules/home/styles/index.css`, `modules/auth/styles/index.css`, `modules/tasks/styles/index.css`.
+- Each split CSS file must be imported by the component or page that owns it so the styles load whenever that UI renders.
+- Remove confirmed-dead CSS that no `.tsx` references.
+
+Reason:
+
+- An 833-line global stylesheet made UI review, ownership, and safe edits hard, and drifted away from the project rule that feature CSS lives inside its module.
+- Co-location matches the Clean Architecture goal of keeping each unit's concerns together and makes future UI/UX review per screen far easier.
+
+Impact:
+
+- New visual components/modules should ship their own CSS file inside a `styles/` subfolder and import it locally, not append to `styles.css`.
+- The `ui/` folder roots (`effects`, `layout`, `components`) should contain `.tsx` only; their CSS lives under `ui/<group>/styles/`.
+- Only global tokens, shared keyframes, and shared atoms belong in `styles.css`.
+- Shared `@keyframes` (`sabai-fade-up`, `sabai-card-rise`) and `@property` stay global because multiple co-located files depend on them.
+- Removed dead classes: `.sabai-nav-note`, `.sabai-life-hero`, `.sabai-hero-grid`, `.sabai-life-visual-*`, `.sabai-priority-*`, `.sabai-page-head`, `.sabai-section-divider`, `.sabai-empty-placeholder`.
+
 ### 2026-06-12: Use a temporary localStorage demo auth gate before real auth
 
 Decision:

@@ -112,6 +112,7 @@ Status: In progress.
 - [ ] Improve empty states and error messages.
 - [x] Clarify page composition rules in `AGENTS.md`.
 - [x] Add frontend UI decision order for AntD, Tailwind, and CSS usage.
+- [x] Break up the global `styles.css` monolith and co-locate CSS with its owning component/module.
 - [x] Add Vercel SPA rewrite plus app-level not-found fallback.
 - [ ] Review security rules for user-owned data.
 - [ ] Run typecheck, lint, and build.

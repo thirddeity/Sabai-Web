@@ -1,0 +1,63 @@
+.sabai-feature-card {
+  height: 100%;
+}
+
+.sabai-feature-card .ant-card-body {
+  height: 100%;
+  padding: 22px;
+}
+
+.sabai-feature-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  color: #386a58;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(217, 244, 230, 0.72);
+}
+
+.sabai-feature-topline {
+  margin-bottom: 12px;
+}
+
+.sabai-feature-card-emerald .ant-typography,
+.sabai-feature-card-sky .ant-typography,
+.sabai-feature-card-amber .ant-typography,
+.sabai-feature-card-lilac .ant-typography {
+  color: #234337;
+}
+
+.sabai-feature-card-emerald {
+  box-shadow: 0 12px 26px rgba(115, 175, 143, 0.08);
+}
+
+.sabai-feature-card-amber {
+  box-shadow: 0 12px 26px rgba(217, 155, 74, 0.08);
+}
+
+.sabai-feature-card-sky {
+  box-shadow: 0 12px 26px rgba(112, 180, 186, 0.08);
+}
+
+.sabai-feature-card-lilac {
+  box-shadow: 0 12px 26px rgba(143, 128, 205, 0.08);
+}
+
+.sabai-feature-card .ant-typography-paragraph {
+  min-height: 66px;
+}
+
+.sabai-feature-card .sabai-glass-button {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .sabai-feature-card .ant-card-body {
+    padding: 18px;
+  }
+}

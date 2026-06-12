@@ -5,6 +5,8 @@ import { Link } from "react-router";
 import type { WithMainStoreProps } from "@/hoc/withMainStore";
 import { withMainStore } from "@/hoc/withMainStore";
 import { withRouter, type WithRouterProps } from "@/hoc/withRouter";
+import "./styles/nav.css";
+import "./styles/MobileBottomNav.css";
 
 class MobileBottomNavComponent extends Component<
   WithMainStoreProps & WithRouterProps

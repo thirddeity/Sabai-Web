@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { GlowOrb } from '@/ui/effects/GlowOrb';
+import './styles/GradientBackground.css';
 
 export function GradientBackground({ children }: PropsWithChildren) {
   return (

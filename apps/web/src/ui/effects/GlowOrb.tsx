@@ -1,5 +1,7 @@
 import type { HTMLAttributes } from 'react';
 
+import './styles/GlowOrb.css';
+
 type GlowOrbPlacement = 'top-left' | 'bottom-right';
 
 export interface GlowOrbProps extends HTMLAttributes<HTMLDivElement> {
