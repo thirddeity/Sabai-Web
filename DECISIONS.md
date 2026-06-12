@@ -2,6 +2,44 @@
 
 ## Decision Log
 
+### 2026-06-12: Use a temporary localStorage demo auth gate before real auth
+
+Decision:
+
+- Add a temporary client-side demo auth gate in `apps/web/src/modules/auth/session.ts` using a single `localStorage` flag (`sabai_demo_auth`).
+- Expose `isAuthenticated`, `signInDemo`, and `signOutDemo` helpers.
+- Enforce access with React Router loaders: `protectedLoader` guards the main app and `loginLoader` keeps signed-in users out of `/login`.
+- Render `/login` as its own route under `LoginLayout`, with a disabled real form and a `ไปหน้าหลักตัวอย่าง` button that calls `signInDemo` and navigates to `/home`.
+- Add a sign-out action (`ออกจากระบบ`) in `FloatingTopNav` that calls `signOutDemo` and navigates back to `/login`.
+
+Reason:
+
+- The app shell needs a realistic login/logout flow and protected-route behavior to design pages against, without building Better Auth yet.
+- A loader-based gate matches the project rule that route guards use loaders, not HOCs or `window.location`.
+- A single flag keeps the demo gate trivial to remove when Better Auth lands.
+
+Impact:
+
+- This is a throwaway, frontend-only gate. It provides no real security and must be replaced by Better Auth before any real user data exists.
+- The login form stays disabled and clearly labeled as not connected to real auth.
+- When real auth is added, replace `session.ts` and the loaders with Better Auth session checks; the loader and `FloatingTopNav` sign-out wiring can stay.
+
+### 2026-06-12: Add a shared GlassButton effect on top of AntD Button
+
+Decision:
+
+- Add `apps/web/src/ui/effects/GlassButton.tsx` as a thin wrapper over AntD `Button` that applies the `sabai-glass-button` treatment and defaults to `size="large"` and `type="text"`.
+
+Reason:
+
+- The demo login CTA and the top-nav sign-out button need a reusable glass button instead of repeating decorative classes per call site.
+- Keeping AntD `Button` as the base preserves behavior and accessibility, consistent with the existing feature-CTA decision.
+
+Impact:
+
+- Reuse `GlassButton` for glass-styled actions instead of re-styling raw AntD buttons.
+- The shared glass styling lives in CSS keyed by `sabai-glass-button`.
+
 ### 2026-06-12: Frontend UI work must choose AntD before Tailwind and CSS
 
 Decision:

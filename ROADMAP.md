@@ -76,6 +76,8 @@ Status: In progress.
 - [x] Add browser compatibility fallbacks for the feature CTA mask and conic-gradient border.
 - [x] Convert the dense dashboard mock into a lighter `/home` feature hub.
 - [x] Rename the frontend `dashboard` module to `home` while keeping `/dashboard` as a temporary redirect.
+- [x] Add a temporary localStorage demo auth gate with loader-based route guards, a `/login` route, and a top-nav sign-out action (to be replaced by Better Auth).
+- [x] Add a shared `GlassButton` effect for glass-styled actions.
 
 ## Phase 3: Backend Foundation
 
@@ -84,7 +86,7 @@ Status: In progress.
 - [ ] Add Zod validation pattern.
 - [ ] Add Drizzle setup.
 - [ ] Choose Supabase Free or Neon Free.
-- [ ] Add Better Auth foundation.
+- [ ] Add Better Auth foundation (replaces the temporary localStorage demo auth gate).
 
 ## Phase 4: MVP Modules
 

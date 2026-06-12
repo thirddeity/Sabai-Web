@@ -5,6 +5,7 @@
 Phase 4 MVP Modules is in progress.
 The app shell now uses `/home` as the primary home route, with the old `/dashboard` path redirecting to `/home` for compatibility.
 The first real module page is `งานที่ต้องทำ` at `/tasks`, implemented as a frontend mock with CRUD + UX before backend work.
+The app now has a temporary frontend-only demo auth gate: a `localStorage` flag protects the main shell through React Router loaders, `/login` is its own route, and the top nav has a sign-out action. This is a throwaway gate to be replaced by Better Auth later.
 The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page so deep links do not hit a raw platform `NOT_FOUND`.
 The repo rules now also spell out that feature pages should stay thin and split crowded JSX into smaller local components.
 Frontend UI work now has an explicit AntD/Tailwind/CSS decision order so future AI/Codex runs use AntD layout first, Tailwind only for small utilities, and CSS only when it is the right tool for project-specific visuals.
@@ -196,3 +197,23 @@ Before starting that task, read:
 - Refined `MobileBottomNav` glass styling with stronger surface layering, clearer active state, readable labels, and stable tap targets.
 - Added explicit mobile tap target sizing, `touch-action: manipulation`, and iPhone safe-area spacing for the bottom nav while keeping top spacing for the feature island navbar.
 - Verified `antd lint ./src --format json`, `bun run typecheck`, `bun run lint`, and `bun run build` pass.
+
+## Demo Auth Gate And Shell Wiring Update
+
+This update records app-shell changes made directly in code so the documents match the repository.
+
+- Added a temporary frontend-only demo auth gate:
+  - `apps/web/src/modules/auth/session.ts` stores a single `sabai_demo_auth` flag in `localStorage` and exposes `isAuthenticated`, `signInDemo`, and `signOutDemo`.
+  - `apps/web/src/router/middleware.ts` enforces access with loaders: `protectedLoader` guards the main shell and `loginLoader` redirects signed-in users away from `/login`.
+  - `apps/web/src/router/index.tsx` wires `protectedLoader` on the `/` shell and `loginLoader` on `/login`.
+- Reworked the login route:
+  - `/login` is its own route rendered inside `LoginLayout`.
+  - The login page shows a disabled real form clearly labeled as not connected to real auth, plus a `ไปหน้าหลักตัวอย่าง` button that calls `signInDemo` and navigates to `/home`.
+- Added a sign-out action:
+  - `FloatingTopNav` now uses `withRouter` + `withMainStore` + `withBreakpoint` and shows an `ออกจากระบบ` button that calls `signOutDemo` and navigates to `/login`.
+- Added a shared `GlassButton` effect in `apps/web/src/ui/effects/GlassButton.tsx` wrapping AntD `Button` with the `sabai-glass-button` treatment.
+- Confirmed navigation source of truth:
+  - `apps/web/src/store/MainStore.tsx` holds the `tabs` menu (`หน้าหลัก`, `เอกสาร`, `การเงิน`, `นัดหมาย`, `งาน`) shared by `FloatingTopNav` and `MobileBottomNav` via `withMainStore`.
+  - `withRouter` exposes `location`, `navigate`, and `params` for class components.
+
+This work stays frontend-only and mock-only: no real auth, backend, database, or dependency changes were added.
