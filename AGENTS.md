@@ -749,5 +749,48 @@ apps/web/src/ui/layout/
 
 ### Final Rule
 
-ทำให้ AntD สวยขึ้นก่อน
-อย่ารีบเอา component ข้างนอกมาปน ถ้า AntD + visual wrapper ทำได้
+## External UI And Visual Library Rules
+
+This section supersedes any older rule that says external UI components must be the last choice.
+
+Project direction:
+
+- External UI, animation, visualization, image, icon, and effect libraries are allowed when they clearly improve UX/UI quality, visual polish, interaction quality, or delivery speed.
+- Ant Design remains the default foundation for app-like product surfaces such as forms, tables, drawers, modals, layout primitives, feedback states, and standard controls.
+- External libraries may be used more freely for landing pages, hero sections, marketing surfaces, empty states, illustrations, advanced motion, charts, visual effects, and highly polished feature previews.
+- The goal is not to keep the stack minimal at all costs. The goal is to keep the product beautiful, understandable, maintainable, and still appropriate for an MVP.
+
+Allowed examples:
+
+- Icon libraries beyond Ant Design icons when they improve clarity or visual style.
+- Animation and interaction libraries such as `framer-motion`.
+- Visual effect libraries for tasteful backgrounds, scroll effects, carousels, or landing-page interactions.
+- Chart or data visualization libraries when AntD charts are not enough for the desired user experience.
+- Specialized UI kits or component libraries for isolated landing-page sections or polished showcase blocks.
+- Generated or curated bitmap images, illustrations, mockups, and background assets.
+
+Selection rules:
+
+- Pick libraries with TypeScript support, active maintenance, React compatibility, and reasonable bundle cost.
+- Prefer libraries that can be used in isolated components instead of replacing the whole app UI system.
+- Do not introduce a new library for a tiny effect that simple CSS or an existing dependency can handle cleanly.
+- Do not mix multiple libraries that solve the same problem unless there is a clear design reason.
+- Do not copy large opaque components that are hard to customize, hard to localize into Thai, or hard to make responsive.
+
+Implementation rules:
+
+- Explain why the new library is being added before installing it.
+- Keep external-library usage behind local project components when practical, such as `LandingHero`, `AnimatedFeaturePreview`, or `VisualBackground`.
+- Visible text must remain Thai-first and easy to understand for Thai users of many ages.
+- Components must remain responsive, accessible, keyboard-friendly where relevant, and readable on mobile.
+- Motion must be tasteful and must not block usage, reduce readability, or create discomfort.
+- Any paid, hosted, account-based, analytics-heavy, or tracking library is not allowed unless explicitly approved.
+
+Updated UI decision order:
+
+1. For app workflow UI, start with AntD and enhance with project visual wrappers or external libraries when they produce a better result.
+2. For landing pages, marketing sections, hero visuals, illustrations, animations, and high-polish showcases, external UI and visual libraries are first-class options.
+3. Use Tailwind for small utilities and local fit-and-finish, not as a replacement for thoughtful component structure.
+4. Use CSS for project-specific visuals, composition glue, responsive polish, and effects that do not need a dependency.
+5. Choose the option that gives the best user experience with the least long-term confusion.
+

@@ -66,6 +66,71 @@ Impact:
 - Reuse `GlassButton` for glass-styled actions instead of re-styling raw AntD buttons.
 - The shared glass styling lives in CSS keyed by `sabai-glass-button`.
 
+### 2026-06-14: Landing page uses logo branding and interactive motion
+
+Decision:
+
+- Use the real app logo from `apps/web/src/assets/logo.png` in the landing navbar and hero brand seal.
+- Add `framer-motion` for landing-page motion, limited to soft reveal, hover lift, and interactive polish.
+- Lazy-load the `/landing` route so `framer-motion` and landing-specific code do not inflate the initial app route bundle.
+- Keep landing previews code-native instead of screenshot-based so they are easy to maintain.
+- Add product clarity and trust sections that explain the MVP without claiming AI, payment, or team features.
+
+Reason:
+
+- The owner wanted the landing page to combine brand-forward polish, interactive day journey, and some trust/product clarity.
+- The real logo gives the page a stronger product identity than text-only branding.
+- `framer-motion` is justified by the updated external UI library rule because it improves landing-page polish without changing backend or app workflow surfaces.
+
+Impact:
+
+- Future landing animation should stay subtle and must not hide content before scroll.
+- Landing-specific visual dependencies should stay route-scoped or lazy-loaded when practical.
+- New landing content should keep Thai-first wording and avoid selling features outside MVP.
+- The landing page remains public at `/landing`; `/` stays protected for now.
+
+### 2026-06-14: Landing page uses a Step-by-Step day journey
+
+Decision:
+
+- Add a public landing page at `/landing`.
+- Use the "ชีวิตวันนี้แบบ Step-by-Step" direction to explain Sabai through a day-in-the-life journey: morning tasks, midday appointments, evening finance, and night document care.
+- Keep `/` protected and still redirecting to `/home` for now so the existing app flow is not changed unexpectedly.
+- Use a generated bitmap hero image as the first-viewport visual anchor and keep visible copy Thai-first.
+
+Reason:
+
+- The owner chose the Step-by-Step landing concept because it explains the product through everyday life rather than abstract feature lists.
+- A public `/landing` route lets the new page be reviewed without risking current app navigation or auth behavior.
+- A real visual asset makes the page feel more attractive and emotionally grounded than a text-only layout.
+
+Impact:
+
+- Future landing work should continue the guided day-journey narrative unless a new design decision replaces it.
+- Later, `/` can be moved from protected redirect to public landing once auth and product flow are ready.
+- Landing visuals may use external libraries or generated assets when they improve polish.
+
+### 2026-06-14: External UI and visual libraries are allowed for UX/UI polish
+
+Decision:
+
+- Allow external UI, animation, visualization, image, icon, and effect libraries when they clearly improve UX/UI quality, visual polish, interaction quality, or delivery speed.
+- Keep Ant Design as the default foundation for app workflow surfaces such as forms, tables, drawers, modals, layout primitives, feedback states, and standard controls.
+- Treat external libraries as first-class options for landing pages, hero sections, marketing surfaces, empty states, illustrations, advanced motion, charts, visual effects, and polished feature previews.
+- Require new dependencies to be explained before installation, including purpose, why existing tools are not enough, bundle/backend impact, and maintenance risk.
+
+Reason:
+
+- The product needs a more attractive and emotionally engaging UI, especially for a future landing page.
+- A strict "external UI library last" rule can slow down visual quality and make the app feel less polished than the owner wants.
+- The project can stay MVP-sized while still using focused, well-chosen visual libraries.
+
+Impact:
+
+- Future landing-page and high-polish UI work may choose external libraries earlier in the design process.
+- Existing AntD-based workflow screens do not need to be replaced wholesale.
+- Reviews should evaluate whether a library improves user experience enough to justify its bundle and maintenance cost.
+
 ### 2026-06-12: Frontend UI work must choose AntD before Tailwind and CSS
 
 Decision:
@@ -553,3 +618,41 @@ Impact:
 
 - Direct visits and refreshes on app routes now land in the SPA instead of showing a raw Vercel 404.
 - Unknown routes become easier to understand because the app can render a Thai fallback screen.
+
+### 2026-06-14: Landing copy should be Thai-first and product-led
+
+Decision:
+
+- The `/landing` page should explain Sabai through a visible product showcase, not through planning or implementation language.
+- User-facing landing copy should avoid process words such as `MVP`, `Journey`, and `preview` when a clear Thai phrase can explain the same idea.
+- Motion on the landing page should stay behind local components and use `framer-motion` for polished but readable interaction.
+
+Reason:
+
+- Sabai targets Thai users of many ages, so mixed English product vocabulary makes the first impression less clear.
+- Showing a compact product surface helps users understand the app faster than long explanatory sections.
+- The landing page can be visually richer than app workflow screens while still keeping the core app maintainable.
+
+Impact:
+
+- Future landing sections should use Thai-first headings, CTAs, and descriptions.
+- Interactive visual sections can use external visual libraries when they improve clarity, but should not replace AntD for app workflow UI.
+- Product screenshots are not required yet; code-native previews remain easier to maintain while the app surface is still evolving.
+
+### 2026-06-14: Landing trust copy should explain user confidence
+
+Decision:
+
+- Trust copy on `/landing` should focus on clarity, account-owned data, and keeping the system simple enough to use and maintain.
+- Avoid trust headlines that sound like internal implementation constraints when the section is meant for users.
+- CTA spacing can use landing-specific CSS classes when AntD spacing props are not enough for polished visual breathing room.
+
+Reason:
+
+- The owner found the previous trust headline too generic and not compelling enough for a product landing page.
+- Browser review showed the CTA groups needed slightly more breathing room, especially on mobile.
+
+Impact:
+
+- Future landing trust sections should explain why a user can feel safe and oriented, not just that the app is minimal.
+- CTA refinements should stay local to landing CSS unless the pattern becomes shared across multiple pages.

@@ -78,6 +78,10 @@ Status: In progress.
 - [x] Rename the frontend `dashboard` module to `home` while keeping `/dashboard` as a temporary redirect.
 - [x] Add a temporary localStorage demo auth gate with loader-based route guards, a `/login` route, and a top-nav sign-out action (to be replaced by Better Auth).
 - [x] Add a shared `GlassButton` effect for glass-styled actions.
+- [x] Add public Step-by-Step landing page at `/landing`.
+- [x] Upgrade landing page with real logo branding, interactive journey previews, and trust/product clarity sections.
+- [x] Refine landing page into an interactive product showcase with Thai-first copy and clearer CTA content.
+- [x] Refine landing trust copy and CTA spacing after browser review.
 
 ## Phase 3: Backend Foundation
 
@@ -113,6 +117,7 @@ Status: In progress.
 - [x] Clarify page composition rules in `AGENTS.md`.
 - [x] Add frontend UI decision order for AntD, Tailwind, and CSS usage.
 - [x] Break up the global `styles.css` monolith and co-locate CSS with its owning component/module.
+- [x] Allow external UI and visual libraries when they improve UX/UI quality.
 - [x] Add Vercel SPA rewrite plus app-level not-found fallback.
 - [ ] Review security rules for user-owned data.
 - [ ] Run typecheck, lint, and build.

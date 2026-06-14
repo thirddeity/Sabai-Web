@@ -9,6 +9,9 @@ The app now has a temporary frontend-only demo auth gate: a `localStorage` flag 
 The Vercel deployment path now has an SPA rewrite plus a Thai fallback 404 page so deep links do not hit a raw platform `NOT_FOUND`.
 The repo rules now also spell out that feature pages should stay thin and split crowded JSX into smaller local components.
 Frontend UI work now has an explicit AntD/Tailwind/CSS decision order so future AI/Codex runs use AntD layout first, Tailwind only for small utilities, and CSS only when it is the right tool for project-specific visuals.
+The project rules now allow external UI and visual libraries when they clearly improve UX/UI quality, especially for landing pages, hero sections, illustrations, motion, charts, and polished visual showcases.
+The app now has a public Step-by-Step landing page at `/landing` that explains Sabai through a day-in-the-life journey.
+The landing page has been upgraded with real logo branding, `framer-motion` polish, code-native mini previews, product clarity, and trust messaging that stays inside MVP scope.
 
 ## Completed
 
@@ -188,6 +191,38 @@ Before starting that task, read:
 6. `PROGRESS.md`
 7. `DECISIONS.md`
 
+## External UI Library Policy Update
+
+- Updated `AGENTS.md` with an external UI and visual library policy that supersedes the older "external UI as last choice" rule.
+- Kept Ant Design as the default for app workflow surfaces such as forms, tables, modals, drawers, and standard controls.
+- Allowed external UI, animation, visualization, image, icon, and effect libraries when they improve polish, especially on landing pages and visual showcases.
+- Added selection and implementation rules for TypeScript support, bundle cost, responsive behavior, accessibility, Thai-first copy, and avoiding tracking-heavy or paid hosted libraries without approval.
+- Fixed the existing lint issue in `apps/web/src/modules/tasks/components/task-options.ts` by changing `BaseType` to a type-only import.
+- No package was installed and no runtime behavior was changed.
+- Verified `bun run typecheck`, `bun run lint`, and `bun run build` pass. The build still reports the existing large chunk warning for the web bundle.
+
+## Step-by-Step Landing Page Update
+
+- Added a public `/landing` route without changing the existing protected `/` to `/home` app flow.
+- Created a feature-based landing module under `apps/web/src/modules/landing/`.
+- Added a generated hero bitmap asset and optimized it for the web at `apps/web/src/modules/landing/assets/day-journey-hero.jpg`.
+- Implemented the selected "ชีวิตวันนี้แบบ Step-by-Step" concept with morning tasks, midday appointments, evening finance, and night document care.
+- Used AntD layout and controls for structure, with feature CSS reserved for full-bleed hero, glass surfaces, timeline treatment, and responsive visual polish.
+- Kept the task out of scope for backend, auth, database, and dependency changes.
+- Verified `/landing` on desktop and mobile with Chrome automation: hero image loads, CTA goes to `/login`, the journey anchor scrolls, and no horizontal overflow appears.
+- Verified `bun run typecheck`, `bun run lint`, and `bun run build` pass. The build still reports the existing large JS chunk warning.
+
+## Landing Brand And Interactive Journey Update
+
+- Added `framer-motion` to the web app for landing-page motion and hover polish.
+- Lazy-loaded the public `/landing` route so landing motion code is separated from the primary app bundle.
+- Replaced text-only landing branding with the real app logo from `apps/web/src/assets/logo.png` in the navbar and hero brand seal.
+- Expanded the day journey cards with code-native mini product previews for tasks, appointments, finance, and documents.
+- Added product clarity cards for what Sabai helps users understand on the first page.
+- Added trust cards that explicitly stay within MVP scope and avoid claiming AI, payment, or team features.
+- Adjusted motion so content is never hidden before scrolling; browser verification confirms desktop and mobile content remains visible.
+- Verified the lazy `/landing` route after the router change: logo and hero load, CTA goes to `/login`, the journey anchor scrolls, and no horizontal overflow appears.
+
 ## Mobile Navigation Stabilization Update
 
 - Investigated the mobile-only symptom where switching tabs after scrolling to the bottom of `/tasks` could require a second tap.
@@ -247,3 +282,19 @@ Moved the co-located CSS out of the `ui/` folder roots into a `styles/` subfolde
 - Updated every component import to `./styles/<File>.css` and deleted the old root-level CSS files.
 - `modules/*` already used `styles/`, so they were left unchanged.
 - Verified `bun run typecheck`, `bun run lint`, and `bun run build:web` all pass; the built CSS bundle stayed at ~28.8 kB.
+
+## Landing Interactive Product Showcase Update
+
+- Refined `/landing` from a story-only landing page into a more interactive product showcase.
+- Rewrote visible landing copy to be Thai-first and removed confusing product-process words such as `MVP`, `Journey`, and `preview` from user-facing text.
+- Replaced the tight hero headline with a shorter Thai headline and increased Thai line-height so vowels and tone marks have more breathing room.
+- Added a code-native interactive showcase panel that previews tasks, appointments, finance, and documents without adding backend APIs or screenshot assets.
+- Added a final call-to-action band that reuses the landing hero image as a contextual background.
+- Kept AntD as the layout/control foundation, used `framer-motion` for visual motion, and kept CSS focused on landing-specific visuals.
+
+## Landing Trust Copy And CTA Spacing Update
+
+- Refined the `/landing` trust section so it explains clarity, safety, and simplicity without sounding like internal project wording.
+- Updated trust cards to focus on what Sabai helps with, account-owned data, and keeping the system easy to maintain.
+- Added landing-specific CTA action classes to create better breathing room around the hero and final call-to-action buttons.
+- Kept the work frontend-only; no route, auth, backend, database, or dependency changes were added.

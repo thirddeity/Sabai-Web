@@ -1,0 +1,736 @@
+.sabai-landing-page {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: #1f352d;
+  scroll-behavior: smooth;
+  background:
+    linear-gradient(180deg, #f7fcf8 0%, #edf8ef 56%, #fff8ee 100%),
+    radial-gradient(circle at 18% 8%, rgba(220, 244, 231, 0.8), transparent 32%);
+}
+
+.sabai-landing-hero {
+  position: relative;
+  min-height: min(780px, 92dvh);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sabai-landing-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sabai-landing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(247, 252, 248, 0.96) 0%, rgba(247, 252, 248, 0.84) 38%, rgba(247, 252, 248, 0.32) 68%, rgba(247, 252, 248, 0.12) 100%),
+    linear-gradient(180deg, rgba(247, 252, 248, 0.05) 0%, rgba(237, 248, 239, 0.78) 100%);
+}
+
+.sabai-landing-nav {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - 32px), 1180px);
+  margin: 16px auto 0;
+  padding: 10px 12px 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 18px 42px rgba(52, 116, 90, 0.12);
+  backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.sabai-landing-brand {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+  color: #2f6f5e;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sabai-landing-brand img {
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: -7px 0;
+  object-fit: contain;
+  border-radius: 10px;
+  filter: drop-shadow(0 6px 12px rgba(47, 111, 94, 0.14));
+}
+
+.sabai-landing-brand:hover {
+  color: #3a8f73;
+}
+
+.sabai-landing-hero-copy {
+  width: min(calc(100% - 40px), 640px);
+  margin: clamp(72px, 12vh, 128px) auto 0;
+  margin-left: max(20px, calc((100vw - 1180px) / 2));
+  animation: sabai-landing-rise 520ms ease-out both;
+}
+
+.sabai-landing-logo-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 112px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(235, 250, 242, 0.56)),
+    radial-gradient(circle at 20% 0%, rgba(255, 230, 192, 0.42), transparent 58%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 18px 38px rgba(52, 116, 90, 0.14);
+  backdrop-filter: blur(18px) saturate(1.08);
+  animation: sabai-logo-float 5.4s ease-in-out infinite;
+}
+
+.sabai-landing-logo-seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sabai-landing-kicker {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  color: #356d59;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.55;
+  border: 1px solid rgba(111, 172, 139, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.sabai-landing-kicker::before {
+  display: block;
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d99b4a, #79c99c);
+  box-shadow: 0 0 0 4px rgba(121, 201, 156, 0.12);
+}
+
+.sabai-landing-hero-copy .ant-typography {
+  color: #1f352d;
+}
+
+.sabai-landing-hero-copy h1.ant-typography {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(44px, 6.1vw, 76px);
+  line-height: 1.18;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.sabai-landing-hero-copy .ant-typography-paragraph {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(31, 53, 45, 0.78);
+  font-size: clamp(18px, 2.1vw, 23px);
+  line-height: 1.78;
+}
+
+.sabai-landing-hero-actions {
+  padding-top: 8px;
+}
+
+.sabai-landing-hero-actions .ant-btn {
+  min-height: 48px;
+}
+
+.sabai-landing-section {
+  box-sizing: border-box;
+  width: min(calc(100% - 32px), 1180px);
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.sabai-landing-section-head {
+  max-width: 720px;
+}
+
+.sabai-landing-section-head h2.ant-typography,
+.sabai-landing-preview-band h2.ant-typography,
+.sabai-landing-trust-band h2.ant-typography,
+.sabai-landing-final-cta h2.ant-typography {
+  margin: 0;
+  color: #234337;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.24;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.sabai-landing-section-head .ant-typography-paragraph,
+.sabai-landing-preview-band .ant-typography-paragraph,
+.sabai-landing-trust-band .ant-typography-paragraph {
+  margin: 0;
+  color: rgba(35, 67, 55, 0.72);
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.sabai-showcase {
+  position: relative;
+  min-height: 520px;
+  perspective: 1200px;
+}
+
+.sabai-showcase::before,
+.sabai-showcase::after {
+  position: absolute;
+  inset: 42px 8% auto;
+  height: 220px;
+  pointer-events: none;
+  content: "";
+  border-radius: 999px;
+  filter: blur(20px);
+}
+
+.sabai-showcase::before {
+  background: linear-gradient(90deg, rgba(121, 201, 156, 0.32), rgba(217, 155, 74, 0.24));
+  transform: rotate(-8deg);
+}
+
+.sabai-showcase::after {
+  top: 240px;
+  background: linear-gradient(90deg, rgba(126, 183, 205, 0.24), rgba(255, 255, 255, 0.12));
+  transform: rotate(6deg);
+}
+
+.sabai-showcase-device {
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  padding: 24px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(239, 251, 245, 0.6)),
+    linear-gradient(120deg, rgba(45, 96, 77, 0.08), rgba(255, 226, 188, 0.22));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.88),
+    0 28px 70px rgba(44, 96, 76, 0.18);
+  backdrop-filter: blur(20px) saturate(1.08);
+}
+
+.sabai-showcase-device::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(47, 111, 94, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 111, 94, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), transparent 74%);
+}
+
+.sabai-showcase-device h3.ant-typography {
+  margin: 0;
+  color: #1f352d;
+  font-size: 28px;
+  line-height: 1.32;
+}
+
+.sabai-showcase-eyebrow {
+  color: #4f8c73;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.sabai-showcase-status {
+  flex: 0 0 auto;
+  padding: 7px 12px;
+  color: #2f6f5e;
+  font-weight: 800;
+  line-height: 1.4;
+  border: 1px solid rgba(111, 172, 139, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.sabai-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.sabai-showcase-panel {
+  position: relative;
+  min-height: 190px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 16px 34px rgba(46, 93, 75, 0.1);
+}
+
+.sabai-showcase-panel::after {
+  position: absolute;
+  inset: auto 14px 0;
+  height: 4px;
+  content: "";
+  border-radius: 999px 999px 0 0;
+}
+
+.sabai-showcase-panel-tasks::after {
+  background: linear-gradient(90deg, #e6b86a, #8ed7a8);
+}
+
+.sabai-showcase-panel-schedule::after {
+  background: linear-gradient(90deg, #84c7d4, #79c99c);
+}
+
+.sabai-showcase-panel-finance::after {
+  background: linear-gradient(90deg, #d99b4a, #f0c98e);
+}
+
+.sabai-showcase-panel-vault::after {
+  background: linear-gradient(90deg, #8b91c9, #8ed7a8);
+}
+
+.sabai-showcase-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #2f6f5e;
+  font-size: 19px;
+  border-radius: 14px;
+  background: rgba(228, 248, 238, 0.86);
+}
+
+.sabai-showcase-panel .ant-typography-paragraph {
+  min-height: 52px;
+  margin: 0;
+  color: rgba(35, 67, 55, 0.68);
+  line-height: 1.58;
+}
+
+.sabai-showcase-row {
+  min-height: 34px;
+  padding: 7px 9px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.sabai-showcase-row .ant-typography {
+  min-width: 0;
+  color: rgba(35, 67, 55, 0.72);
+}
+
+.sabai-showcase-row .ant-typography-strong {
+  color: #234337;
+}
+
+.sabai-showcase-note {
+  max-width: 380px;
+  color: rgba(35, 67, 55, 0.68);
+  line-height: 1.6;
+}
+
+.sabai-landing-timeline {
+  position: relative;
+  margin-top: 24px;
+}
+
+.sabai-landing-timeline::before {
+  position: absolute;
+  top: 38px;
+  right: 7%;
+  left: 7%;
+  height: 2px;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(90deg, rgba(217, 155, 74, 0.2), rgba(58, 143, 115, 0.42), rgba(116, 132, 190, 0.24));
+}
+
+.sabai-landing-step {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(246, 253, 249, 0.56)),
+    radial-gradient(circle at 20% 10%, rgba(255, 230, 192, 0.38), transparent 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 16px 36px rgba(52, 116, 90, 0.1);
+  backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.sabai-landing-step:hover {
+  border-color: rgba(217, 155, 74, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 22px 44px rgba(52, 116, 90, 0.14);
+}
+
+.sabai-landing-step::after {
+  position: absolute;
+  inset: auto 18px 0;
+  height: 4px;
+  content: "";
+  border-radius: 999px 999px 0 0;
+  background: #79c99c;
+}
+
+.sabai-landing-step .ant-card-body {
+  padding: 22px;
+}
+
+.sabai-landing-step h3.ant-typography,
+.sabai-landing-info-card h3.ant-typography {
+  margin: 0;
+  color: #234337;
+  font-size: 22px;
+  line-height: 1.34;
+}
+
+.sabai-landing-step .ant-typography-paragraph,
+.sabai-landing-info-card .ant-typography-paragraph {
+  margin: 0;
+  color: rgba(35, 67, 55, 0.68);
+  line-height: 1.68;
+}
+
+.sabai-landing-step-icon,
+.sabai-landing-info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #2f6f5e;
+  font-size: 20px;
+  border-radius: 14px;
+  background: rgba(228, 248, 238, 0.86);
+}
+
+.sabai-landing-mini-preview {
+  padding: 12px;
+  border: 1px solid rgba(111, 172, 139, 0.16);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(239, 251, 245, 0.54)),
+    radial-gradient(circle at 100% 0%, rgba(255, 234, 204, 0.32), transparent 48%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.sabai-landing-mini-eyebrow {
+  color: #4f8c73;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sabai-landing-mini-title {
+  color: #234337;
+  line-height: 1.5;
+}
+
+.sabai-landing-mini-row {
+  min-height: 34px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.sabai-landing-mini-row .ant-typography {
+  min-width: 0;
+  max-width: 58%;
+  overflow: hidden;
+  color: rgba(35, 67, 55, 0.72);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sabai-landing-mini-row .ant-typography-strong {
+  color: #234337;
+}
+
+.sabai-landing-step-time {
+  color: rgba(35, 67, 55, 0.62);
+  font-weight: 800;
+}
+
+.sabai-landing-step-morning::after {
+  background: linear-gradient(90deg, #e6b86a, #8ed7a8);
+}
+
+.sabai-landing-step-day::after {
+  background: linear-gradient(90deg, #84c7d4, #79c99c);
+}
+
+.sabai-landing-step-evening::after {
+  background: linear-gradient(90deg, #d99b4a, #f0c98e);
+}
+
+.sabai-landing-step-night::after {
+  background: linear-gradient(90deg, #8b91c9, #8ed7a8);
+}
+
+.sabai-landing-preview-band,
+.sabai-landing-trust-band {
+  margin-bottom: 72px;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.84),
+    0 18px 44px rgba(52, 116, 90, 0.08);
+}
+
+.sabai-landing-preview-band {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(239, 251, 245, 0.58)),
+    radial-gradient(circle at 100% 0%, rgba(255, 226, 188, 0.38), transparent 34%);
+}
+
+.sabai-landing-trust-band {
+  background:
+    linear-gradient(135deg, rgba(247, 252, 248, 0.78), rgba(255, 247, 234, 0.54)),
+    radial-gradient(circle at 0% 100%, rgba(205, 236, 222, 0.46), transparent 36%);
+}
+
+.sabai-landing-info-card {
+  height: 100%;
+  border: 1px solid rgba(111, 172, 139, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 12px 26px rgba(52, 116, 90, 0.06);
+}
+
+.sabai-landing-info-card .ant-card-body {
+  height: 100%;
+  padding: 18px;
+}
+
+.sabai-landing-final-cta {
+  position: relative;
+  margin-bottom: 72px;
+  padding: clamp(34px, 5vw, 58px);
+  overflow: hidden;
+  color: #ffffff;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 24px 64px rgba(30, 70, 56, 0.2);
+}
+
+.sabai-landing-final-cta::after {
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+}
+
+.sabai-landing-final-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.sabai-landing-final-cta .sabai-landing-kicker {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.sabai-landing-final-cta h2.ant-typography,
+.sabai-landing-final-cta .ant-typography-paragraph {
+  color: #ffffff;
+}
+
+.sabai-landing-final-cta .ant-typography-paragraph {
+  max-width: 620px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.sabai-landing-final-actions {
+  padding-top: 8px;
+}
+
+.sabai-landing-final-actions .ant-btn {
+  min-height: 48px;
+}
+
+@keyframes sabai-landing-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sabai-logo-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sabai-landing-logo-seal {
+    animation: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .sabai-landing-hero {
+    min-height: 88dvh;
+  }
+
+  .sabai-landing-hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(247, 252, 248, 0.94) 0%, rgba(247, 252, 248, 0.74) 52%, rgba(237, 248, 239, 0.9) 100%),
+      linear-gradient(90deg, rgba(247, 252, 248, 0.88), rgba(247, 252, 248, 0.26));
+  }
+
+  .sabai-landing-hero-copy {
+    width: min(calc(100% - 32px), 680px);
+    margin: clamp(56px, 10vh, 96px) auto 0;
+  }
+
+  .sabai-landing-logo-seal {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+  }
+
+  .sabai-landing-timeline::before {
+    display: none;
+  }
+
+  .sabai-showcase {
+    min-height: auto;
+  }
+
+  .sabai-showcase-device {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .sabai-landing-nav {
+    width: min(calc(100% - 20px), 100%);
+    margin-top: 10px;
+    padding: 8px 8px 8px 14px;
+  }
+
+  .sabai-landing-nav .ant-btn-text {
+    display: none;
+  }
+
+  .sabai-landing-hero {
+    min-height: 92dvh;
+  }
+
+  .sabai-landing-hero-image {
+    object-position: 58% center;
+  }
+
+  .sabai-landing-hero-copy h1.ant-typography {
+    font-size: clamp(40px, 13vw, 58px);
+    line-height: 1.22;
+  }
+
+  .sabai-landing-hero-actions {
+    padding-top: 12px;
+    row-gap: 14px;
+  }
+
+  .sabai-landing-hero-actions .ant-btn {
+    min-height: 50px;
+  }
+
+  .sabai-landing-section {
+    width: min(calc(100% - 24px), 1180px);
+    padding: 52px 0;
+  }
+
+  .sabai-showcase-device {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .sabai-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sabai-showcase-panel {
+    min-height: 0;
+  }
+
+  .sabai-showcase-panel .ant-typography-paragraph {
+    min-height: 0;
+  }
+
+  .sabai-landing-preview-band,
+  .sabai-landing-trust-band {
+    margin-bottom: 36px;
+    padding: 22px;
+  }
+
+  .sabai-landing-final-cta {
+    margin-bottom: 36px;
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .sabai-landing-final-actions {
+    padding-top: 14px;
+    row-gap: 14px;
+  }
+
+  .sabai-landing-final-actions .ant-btn {
+    min-height: 50px;
+  }
+}

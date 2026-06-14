@@ -12,6 +12,14 @@ import { AppPath } from "@/router/paths";
 
 export const router = createBrowserRouter([
   {
+    path: AppPath.landing,
+    lazy: async () => {
+      const { LandingPage } = await import("@/modules/landing/pages");
+
+      return { Component: LandingPage };
+    },
+  },
+  {
     path: "/",
     element: <MainLayout />,
     loader: protectedLoader,
